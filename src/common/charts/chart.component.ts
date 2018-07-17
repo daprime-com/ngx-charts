@@ -42,6 +42,7 @@ import { TooltipService } from '../tooltip';
       <ngx-charts-scale-legend
         *ngIf="showLegend && legendType === 'scaleLegend'"
         class="chart-legend"
+        [horizontal]="isLabelHorizontal(legendOptions)"
         [valueRange]="legendOptions.domain"
         [colors]="legendOptions.colors"
         [height]="view[1]"
@@ -50,6 +51,7 @@ import { TooltipService } from '../tooltip';
       <ngx-charts-legend
         *ngIf="showLegend && legendType === 'legend' && legendOptions?.position !== 'above'"
         class="chart-legend"
+        [horizontal]="isLabelHorizontal(legendOptions)"
         [data]="legendOptions.domain"
         [title]="legendOptions.title"
         [colors]="legendOptions.colors"
@@ -117,17 +119,21 @@ export class ChartComponent implements OnChanges {
     if (this.showLegend) {
       this.legendType = this.getLegendType();
 
-      if (this.legendType === 'scaleLegend') {
-        legendColumns = 1;
-      } else {
-        legendColumns = 2;
+      if (!this.legendOptions || this.legendOptions.position === 'right') {
+        if (this.legendType === 'scaleLegend') {
+          legendColumns = 1;
+        } else {
+          legendColumns = 2;
+        }
       }
     }
 
     const chartColumns = 12 - legendColumns;
 
     this.chartWidth = ~~(this.view[0] * chartColumns / 12.0);
-    this.legendWidth = ~~(this.view[0] * legendColumns / 12.0);
+    this.legendWidth = (!this.legendOptions || this.legendOptions.position === 'right')
+      ? ~~(this.view[0] * legendColumns / 12.0)
+      : this.chartWidth;
   }
 
   getLegendType(): string {
