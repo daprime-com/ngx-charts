@@ -17,19 +17,6 @@ import { formatLabel } from '../common/label.helper';
   selector: 'g[ngx-charts-pie-series]',
   template: `
     <svg:g *ngFor="let arc of data; trackBy:trackBy">
-      <svg:g ngx-charts-pie-label
-        *ngIf="labelVisible(arc)"
-        [data]="arc"
-        [radius]="outerRadius"
-        [color]="color(arc)"
-        [label]="labelText(arc)"
-        [labelTrim]="trimLabels"
-        [labelTrimSize]="maxLabelLength"
-        [max]="max"
-        [value]="arc.value"
-        [explodeSlices]="explodeSlices"
-        [animations]="animations">
-      </svg:g>
       <svg:g
         ngx-charts-pie-arc
         [startAngle]="arc.startAngle"
@@ -56,6 +43,20 @@ import { formatLabel } from '../common/label.helper';
         [tooltipTemplate]="tooltipTemplate"
         [tooltipContext]="arc.data">
       </svg:g>
+      <svg:g ngx-charts-pie-label
+             *ngIf="labelVisible(arc)"
+             [data]="arc"
+             [radius]="outerRadius"
+             [color]="color(arc)"
+             [label]="labelText(arc)"
+             [labelsPositionOutside]="labelsPositionOutside"
+             [labelTrim]="trimLabels"
+             [labelTrimSize]="maxLabelLength"
+             [max]="max"
+             [value]="arc.value"
+             [explodeSlices]="explodeSlices"
+             [animations]="animations">
+      </svg:g>
     </svg:g>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -68,6 +69,7 @@ export class PieSeriesComponent implements OnChanges {
   @Input() outerRadius = 80;
   @Input() explodeSlices;
   @Input() showLabels;
+  @Input() labelsPositionOutside;
   @Input() gradient: boolean;
   @Input() activeEntries: any[];
   @Input() labelFormatting: any;
@@ -110,7 +112,7 @@ export class PieSeriesComponent implements OnChanges {
   }
 
   outerArc(): any {
-    const factor = 1.5;
+    const factor = this.labelsPositionOutside ? 1.5 : .5;
 
     return arc()
       .innerRadius(this.outerRadius * factor)
@@ -119,12 +121,14 @@ export class PieSeriesComponent implements OnChanges {
 
   calculateLabelPositions(pieData): any {
     const factor = 1.5;
-    const minDistance = 10;
+    const minDistance = 0;
     const labelPositions = pieData;
 
     labelPositions.forEach(d => {
       d.pos = this.outerArc().centroid(d);
-      d.pos[0] = factor * this.outerRadius * (this.midAngle(d) < Math.PI ? 1 : -1);
+      if (this.labelsPositionOutside) {
+		  d.pos[0] = factor * this.outerRadius * (this.midAngle(d) < Math.PI ? 1 : -1);
+	  }
     });
 
     for (let i = 0; i < labelPositions.length - 1; i++) {

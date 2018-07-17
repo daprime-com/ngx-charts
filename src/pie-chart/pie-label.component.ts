@@ -21,6 +21,7 @@ import { trimLabel } from '../common/trim-label.helper';
       </svg:text>
     </svg:g>
     <svg:path
+      *ngIf="labelsPositionOutside"
       [attr.d]="line"
       [attr.stroke]="color"
       fill="none"
@@ -34,6 +35,7 @@ export class PieLabelComponent implements OnChanges {
   @Input() data;
   @Input() radius;
   @Input() label;
+  @Input() labelsPositionOutside;
   @Input() color;
   @Input() max;
   @Input() value;
