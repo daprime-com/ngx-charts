@@ -16537,6 +16537,9 @@ var PieLabelComponent = /** @class */ (function () {
         configurable: true
     });
     PieLabelComponent.prototype.textAnchor = function () {
+        if (!this.labelsPositionOutside) {
+            return 'middle';
+        }
         return this.midAngle(this.data) < Math.PI ? 'start' : 'end';
     };
     PieLabelComponent.prototype.midAngle = function (d) {
@@ -16658,7 +16661,7 @@ var PieSeriesComponent = /** @class */ (function () {
         return d.startAngle + (d.endAngle - d.startAngle) / 2;
     };
     PieSeriesComponent.prototype.outerArc = function () {
-        var factor = this.labelsPositionOutside ? 1.5 : .5;
+        var factor = this.labelsPositionOutside ? 1.5 : 0.5;
         return Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])()
             .innerRadius(this.outerRadius * factor)
             .outerRadius(this.outerRadius * factor);
@@ -16666,7 +16669,7 @@ var PieSeriesComponent = /** @class */ (function () {
     PieSeriesComponent.prototype.calculateLabelPositions = function (pieData) {
         var _this = this;
         var factor = 1.5;
-        var minDistance = 0;
+        var minDistance = 10;
         var labelPositions = pieData;
         labelPositions.forEach(function (d) {
             d.pos = _this.outerArc().centroid(d);

@@ -112,7 +112,7 @@ export class PieSeriesComponent implements OnChanges {
   }
 
   outerArc(): any {
-    const factor = this.labelsPositionOutside ? 1.5 : .5;
+    const factor = this.labelsPositionOutside ? 1.5 : 0.5;
 
     return arc()
       .innerRadius(this.outerRadius * factor)
@@ -121,11 +121,12 @@ export class PieSeriesComponent implements OnChanges {
 
   calculateLabelPositions(pieData): any {
     const factor = 1.5;
-    const minDistance = 0;
+    const minDistance = 10;
     const labelPositions = pieData;
 
     labelPositions.forEach(d => {
       d.pos = this.outerArc().centroid(d);
+
       if (this.labelsPositionOutside) {
 		  d.pos[0] = factor * this.outerRadius * (this.midAngle(d) < Math.PI ? 1 : -1);
 	  }

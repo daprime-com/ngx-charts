@@ -100,6 +100,10 @@ export class PieLabelComponent implements OnChanges {
   }
 
   textAnchor(): any {
+    if (!this.labelsPositionOutside) {
+      return 'middle';
+    }
+
     return this.midAngle(this.data) < Math.PI ? 'start' : 'end';
   }
 
