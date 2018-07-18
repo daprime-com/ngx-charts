@@ -29,6 +29,7 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -54,7 +55,8 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.formatDates();
         this.groupDomain = this.getGroupDomain();
@@ -132,7 +134,8 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -189,6 +192,10 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], BarHorizontalNormalizedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], BarHorizontalNormalizedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Object)

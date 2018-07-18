@@ -5,6 +5,7 @@ import { BaseChartComponent } from '../common/base-chart.component';
 export declare class AreaChartNormalizedComponent extends BaseChartComponent {
     legend: boolean;
     legendTitle: string;
+    legendPosition: string;
     xAxis: any;
     yAxis: any;
     showXAxisLabel: any;
@@ -73,6 +74,7 @@ export declare class AreaChartNormalizedComponent extends BaseChartComponent {
         colors: any;
         domain: any[];
         title: any;
+        position: string;
     };
     updateYAxisWidth({width}: {
         width: any;

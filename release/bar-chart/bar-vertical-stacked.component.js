@@ -29,6 +29,7 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -60,7 +61,8 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.showDataLabel) {
             this.dims.height -= this.dataLabelMaxHeight.negative;
@@ -179,7 +181,8 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -236,6 +239,10 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], BarVerticalStackedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], BarVerticalStackedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Object)

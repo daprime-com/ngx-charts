@@ -118,7 +118,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".advanced-pie-legend {\n  float: left;\n  position: relative;\n  top: 50%;\n  -webkit-transform: translate(0, -50%);\n          transform: translate(0, -50%); }\n  .advanced-pie-legend .total-value {\n    font-size: 36px; }\n  .advanced-pie-legend .total-label {\n    font-size: 24px;\n    margin-bottom: 19px; }\n  .advanced-pie-legend .legend-items-container {\n    width: 100%; }\n    .advanced-pie-legend .legend-items-container .legend-items {\n      white-space: nowrap;\n      overflow: auto; }\n      .advanced-pie-legend .legend-items-container .legend-items .legend-item {\n        margin-right: 20px;\n        display: inline-block;\n        cursor: pointer; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item:focus {\n          outline: none; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item:hover {\n          color: #000;\n          -webkit-transition: 0.2s;\n          transition: 0.2s; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-value {\n          font-size: 24px;\n          margin-top: -6px;\n          margin-left: 11px; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-label {\n          font-size: 14px;\n          opacity: 0.7;\n          margin-left: 11px;\n          margin-top: -6px; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-percent {\n          font-size: 24px;\n          opacity: 0.7;\n          margin-left: 11px; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-color {\n          width: 4px;\n          height: 42px;\n          float: left;\n          margin-right: 7px; }\n", ""]);
+exports.push([module.i, ".advanced-pie-legend {\n  float: left;\n  position: relative;\n  top: 50%;\n  -webkit-transform: translate(0, -50%);\n          transform: translate(0, -50%); }\n  .advanced-pie-legend .total-value {\n    font-size: 36px; }\n  .advanced-pie-legend .total-label {\n    font-size: 24px;\n    margin-bottom: 19px; }\n  .advanced-pie-legend .legend-items-container {\n    width: 100%; }\n    .advanced-pie-legend .legend-items-container .legend-items {\n      white-space: nowrap;\n      overflow: auto; }\n      .advanced-pie-legend .legend-items-container .legend-items .legend-item {\n        margin-right: 20px;\n        display: inline-block;\n        cursor: pointer; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item:focus {\n          outline: none; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item:hover {\n          color: #000;\n          -webkit-transition: 0.2s;\n          transition: 0.2s; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-value {\n          font-size: 24px;\n          margin-top: -6px;\n          margin-left: 11px; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-label {\n          font-size: 14px;\n          opacity: 0.7;\n          margin-left: 11px;\n          margin-top: -6px; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-percent {\n          font-size: 24px;\n          opacity: 0.7;\n          margin-left: 11px; }\n        .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-color {\n          border-left: 4px solid;\n          width: 4px;\n          height: 42px;\n          float: left;\n          margin-right: 7px; }\n", ""]);
 
 // exports
 
@@ -133,7 +133,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".chart-legend {\n  display: inline-block;\n  padding: 0;\n  width: auto !important; }\n  .chart-legend .legend-title {\n    white-space: nowrap;\n    overflow: hidden;\n    margin-left: 10px;\n    margin-bottom: 5px;\n    font-size: 14px;\n    font-weight: bold; }\n  .chart-legend ul, .chart-legend li {\n    padding: 0;\n    margin: 0;\n    list-style: none; }\n  .chart-legend .legend-wrap {\n    width: calc(100% - 10px); }\n  .chart-legend .legend-labels {\n    line-height: 85%;\n    list-style: none;\n    text-align: left;\n    float: left;\n    width: 100%;\n    border-radius: 3px;\n    overflow-y: auto;\n    overflow-x: hidden;\n    white-space: nowrap;\n    background: rgba(0, 0, 0, 0.05); }\n  .chart-legend .legend-label {\n    cursor: pointer;\n    font-size: 90%;\n    margin: 8px;\n    color: #AFB7C8; }\n    .chart-legend .legend-label:hover {\n      color: #000;\n      -webkit-transition: 0.2s;\n      transition: 0.2s; }\n    .chart-legend .legend-label .active .legend-label-text {\n      color: #000; }\n  .chart-legend .legend-label-color {\n    display: inline-block;\n    height: 15px;\n    width: 15px;\n    margin-right: 5px;\n    color: #5b646b;\n    border-radius: 3px; }\n  .chart-legend .legend-label-text {\n    display: inline-block;\n    vertical-align: top;\n    line-height: 15px;\n    font-size: 12px;\n    width: calc(100% - 20px);\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden; }\n  .chart-legend .legend-title-text {\n    vertical-align: bottom;\n    display: inline-block;\n    line-height: 16px;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis; }\n", ""]);
+exports.push([module.i, ".chart-legend {\n  display: inline-block;\n  padding: 0;\n  width: auto !important; }\n  .chart-legend .legend-title {\n    white-space: nowrap;\n    overflow: hidden;\n    margin-left: 10px;\n    margin-bottom: 5px;\n    font-size: 14px;\n    font-weight: bold; }\n  .chart-legend ul, .chart-legend li {\n    padding: 0;\n    margin: 0;\n    list-style: none; }\n  .chart-legend .horizontal-legend li {\n    display: inline-block; }\n  .chart-legend .legend-wrap {\n    width: calc(100% - 10px); }\n  .chart-legend .legend-labels {\n    line-height: 85%;\n    list-style: none;\n    text-align: left;\n    float: left;\n    width: 100%;\n    border-radius: 3px;\n    overflow-y: auto;\n    overflow-x: hidden;\n    white-space: nowrap;\n    background: rgba(0, 0, 0, 0.05); }\n  .chart-legend .legend-label {\n    cursor: pointer;\n    font-size: 90%;\n    margin: 8px;\n    color: #AFB7C8; }\n    .chart-legend .legend-label:hover {\n      color: #000;\n      -webkit-transition: 0.2s;\n      transition: 0.2s; }\n    .chart-legend .legend-label .active .legend-label-text {\n      color: #000; }\n  .chart-legend .legend-label-color {\n    display: inline-block;\n    height: 15px;\n    width: 15px;\n    margin-right: 5px;\n    color: #5b646b;\n    border-radius: 3px; }\n  .chart-legend .legend-label-text {\n    display: inline-block;\n    vertical-align: top;\n    line-height: 15px;\n    font-size: 12px;\n    width: calc(100% - 20px);\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden; }\n  .chart-legend .legend-title-text {\n    vertical-align: bottom;\n    display: inline-block;\n    line-height: 16px;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis; }\n", ""]);
 
 // exports
 
@@ -148,7 +148,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".chart-legend {\n  display: inline-block;\n  padding: 0;\n  width: auto !important; }\n  .chart-legend .scale-legend {\n    text-align: center;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n  .chart-legend .scale-legend-wrap {\n    display: inline-block;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    width: 30px;\n    border-radius: 5px;\n    margin: 0 auto; }\n  .chart-legend .scale-legend-label {\n    font-size: 12px; }\n", ""]);
+exports.push([module.i, ".chart-legend {\n  display: inline-block;\n  padding: 0;\n  width: auto !important; }\n  .chart-legend .scale-legend {\n    text-align: center;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n  .chart-legend .scale-legend-wrap {\n    display: inline-block;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    width: 30px;\n    border-radius: 5px;\n    margin: 0 auto; }\n  .chart-legend .scale-legend-label {\n    font-size: 12px; }\n  .chart-legend .horizontal-legend.scale-legend {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n  .chart-legend .horizontal-legend .scale-legend-wrap {\n    width: auto;\n    height: 30px;\n    margin: 0 16px; }\n", ""]);
 
 // exports
 
@@ -452,6 +452,7 @@ var AreaChartNormalizedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.showGridLines = true;
         _this.curve = __WEBPACK_IMPORTED_MODULE_2_d3_shape__["curveLinear"];
         _this.activeEntries = [];
@@ -480,7 +481,8 @@ var AreaChartNormalizedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.timeline) {
             this.dims.height -= (this.timelineHeight + this.margin[2] + this.timelinePadding);
@@ -691,7 +693,8 @@ var AreaChartNormalizedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.seriesDomain;
@@ -748,6 +751,10 @@ var AreaChartNormalizedComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], AreaChartNormalizedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], AreaChartNormalizedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -907,6 +914,7 @@ var AreaChartStackedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.showGridLines = true;
         _this.curve = __WEBPACK_IMPORTED_MODULE_2_d3_shape__["curveLinear"];
         _this.activeEntries = [];
@@ -935,7 +943,8 @@ var AreaChartStackedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.timeline) {
             this.dims.height -= (this.timelineHeight + this.margin[2] + this.timelinePadding);
@@ -1162,7 +1171,8 @@ var AreaChartStackedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.seriesDomain;
@@ -1219,6 +1229,10 @@ var AreaChartStackedComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], AreaChartStackedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], AreaChartStackedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -1393,6 +1407,7 @@ var AreaChartComponent = /** @class */ (function (_super) {
     function AreaChartComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.baseValue = 'auto';
         _this.showGridLines = true;
         _this.curve = __WEBPACK_IMPORTED_MODULE_2_d3_shape__["curveLinear"];
@@ -1421,7 +1436,8 @@ var AreaChartComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.timeline) {
             this.dims.height -= (this.timelineHeight + this.margin[2] + this.timelinePadding);
@@ -1604,7 +1620,8 @@ var AreaChartComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.seriesDomain;
@@ -1661,6 +1678,10 @@ var AreaChartComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], AreaChartComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], AreaChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -2204,6 +2225,7 @@ var BarHorizontal2DComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -2237,7 +2259,8 @@ var BarHorizontal2DComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.formatDates();
         this.groupDomain = this.getGroupDomain();
@@ -2338,7 +2361,8 @@ var BarHorizontal2DComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -2407,6 +2431,10 @@ var BarHorizontal2DComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarHorizontal2DComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarHorizontal2DComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -2579,6 +2607,7 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -2604,7 +2633,8 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.formatDates();
         this.groupDomain = this.getGroupDomain();
@@ -2682,7 +2712,8 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -2739,6 +2770,10 @@ var BarHorizontalNormalizedComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarHorizontalNormalizedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarHorizontalNormalizedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -2891,6 +2926,7 @@ var BarHorizontalStackedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -2922,7 +2958,8 @@ var BarHorizontalStackedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.formatDates();
         this.groupDomain = this.getGroupDomain();
@@ -3026,7 +3063,8 @@ var BarHorizontalStackedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -3095,6 +3133,10 @@ var BarHorizontalStackedComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarHorizontalStackedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarHorizontalStackedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -3256,6 +3298,7 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -3288,7 +3331,8 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.xScale = this.getXScale();
         this.yScale = this.getYScale();
@@ -3340,7 +3384,8 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.yDomain;
@@ -3401,6 +3446,10 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarHorizontalComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarHorizontalComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -3698,6 +3747,7 @@ var BarVertical2DComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.scaleType = 'ordinal';
         _this.showGridLines = true;
@@ -3732,7 +3782,8 @@ var BarVertical2DComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.showDataLabel) {
             this.dims.height -= this.dataLabelMaxHeight.negative;
@@ -3848,7 +3899,8 @@ var BarVertical2DComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -3905,6 +3957,10 @@ var BarVertical2DComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarVertical2DComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarVertical2DComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -4081,6 +4137,7 @@ var BarVerticalNormalizedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -4106,7 +4163,8 @@ var BarVerticalNormalizedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.formatDates();
         this.groupDomain = this.getGroupDomain();
@@ -4184,7 +4242,8 @@ var BarVerticalNormalizedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -4241,6 +4300,10 @@ var BarVerticalNormalizedComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarVerticalNormalizedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarVerticalNormalizedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -4393,6 +4456,7 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -4424,7 +4488,8 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.showDataLabel) {
             this.dims.height -= this.dataLabelMaxHeight.negative;
@@ -4543,7 +4608,8 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.innerDomain;
@@ -4600,6 +4666,10 @@ var BarVerticalStackedComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarVerticalStackedComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarVerticalStackedComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -4761,6 +4831,7 @@ var BarVerticalComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.showGridLines = true;
         _this.activeEntries = [];
@@ -4793,7 +4864,8 @@ var BarVerticalComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.showDataLabel) {
             this.dims.height -= this.dataLabelMaxHeight.negative;
@@ -4848,7 +4920,8 @@ var BarVerticalComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.xDomain;
@@ -4909,6 +4982,10 @@ var BarVerticalComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], BarVerticalComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BarVerticalComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -5984,13 +6061,13 @@ var BubbleChartComponent = /** @class */ (function (_super) {
         _this.showGridLines = true;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.xAxis = true;
         _this.yAxis = true;
         _this.roundDomains = false;
         _this.maxRadius = 10;
         _this.minRadius = 3;
         _this.schemeType = 'ordinal';
-        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.activate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         _this.deactivate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -6015,7 +6092,8 @@ var BubbleChartComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.seriesDomain = this.results.map(function (d) { return d.name; });
         this.rDomain = this.getRDomain();
@@ -6205,6 +6283,10 @@ var BubbleChartComponent = /** @class */ (function (_super) {
     ], BubbleChartComponent.prototype, "legendTitle", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], BubbleChartComponent.prototype, "legendPosition", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
     ], BubbleChartComponent.prototype, "xAxis", void 0);
     __decorate([
@@ -6263,10 +6345,6 @@ var BubbleChartComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], BubbleChartComponent.prototype, "schemeType", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", String)
-    ], BubbleChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
@@ -8061,6 +8139,12 @@ var ChartComponent = /** @class */ (function () {
         this.legendLabelDeactivate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.tooltipService.injectionService.setRootViewContainer(this.vcr);
     }
+    ChartComponent.prototype.isLabelHorizontal = function (legendOptions) {
+        if (!legendOptions) {
+            return false;
+        }
+        return ~['below', 'above'].indexOf(legendOptions.position);
+    };
     ChartComponent.prototype.ngOnChanges = function (changes) {
         this.update();
     };
@@ -8068,16 +8152,20 @@ var ChartComponent = /** @class */ (function () {
         var legendColumns = 0;
         if (this.showLegend) {
             this.legendType = this.getLegendType();
-            if (this.legendType === 'scaleLegend') {
-                legendColumns = 1;
-            }
-            else {
-                legendColumns = 2;
+            if (!this.legendOptions || this.legendOptions.position === 'right') {
+                if (this.legendType === 'scaleLegend') {
+                    legendColumns = 1;
+                }
+                else {
+                    legendColumns = 2;
+                }
             }
         }
         var chartColumns = 12 - legendColumns;
         this.chartWidth = ~~(this.view[0] * chartColumns / 12.0);
-        this.legendWidth = ~~(this.view[0] * legendColumns / 12.0);
+        this.legendWidth = (!this.legendOptions || this.legendOptions.position === 'right')
+            ? ~~(this.view[0] * legendColumns / 12.0)
+            : this.chartWidth;
     };
     ChartComponent.prototype.getLegendType = function () {
         if (this.legendOptions.scaleType === 'linear') {
@@ -8139,7 +8227,7 @@ var ChartComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip__["g" /* TooltipService */]],
             selector: 'ngx-charts-chart',
-            template: "\n    <div\n      class=\"ngx-charts-outer\"\n      [style.width.px]=\"view[0]\"\n      [@animationState]=\"'active'\"\n      [@.disabled]=\"!animations\">\n      <svg\n        class=\"ngx-charts\"\n        [attr.width]=\"chartWidth\"\n        [attr.height]=\"view[1]\">\n        <ng-content></ng-content>\n      </svg>\n      <ngx-charts-scale-legend\n        *ngIf=\"showLegend && legendType === 'scaleLegend'\"\n        class=\"chart-legend\"\n        [valueRange]=\"legendOptions.domain\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\">\n      </ngx-charts-scale-legend>\n      <ngx-charts-legend\n        *ngIf=\"showLegend && legendType === 'legend'\"\n        class=\"chart-legend\"\n        [data]=\"legendOptions.domain\"\n        [title]=\"legendOptions.title\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\"\n        [activeEntries]=\"activeEntries\"\n        (labelClick)=\"legendLabelClick.emit($event)\"\n        (labelActivate)=\"legendLabelActivate.emit($event)\"\n        (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n    </div>\n  ",
+            template: "\n    <div\n      class=\"ngx-charts-outer\"\n      [style.width.px]=\"view[0]\"\n      [@animationState]=\"'active'\"\n      [@.disabled]=\"!animations\">\n      <ngx-charts-legend\n              *ngIf=\"showLegend && legendType === 'legend' && legendOptions?.position === 'above'\"\n              class=\"chart-legend\"\n              [horizontal]=\"isLabelHorizontal(legendOptions)\"\n              [data]=\"legendOptions.domain\"\n              [title]=\"legendOptions.title\"\n              [colors]=\"legendOptions.colors\"\n              [height]=\"view[1]\"\n              [width]=\"legendWidth\"\n              [activeEntries]=\"activeEntries\"\n              (labelClick)=\"legendLabelClick.emit($event)\"\n              (labelActivate)=\"legendLabelActivate.emit($event)\"\n              (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n      <svg\n        class=\"ngx-charts\"\n        [attr.width]=\"chartWidth\"\n        [attr.height]=\"view[1]\">\n        <ng-content></ng-content>\n      </svg>\n      <ngx-charts-scale-legend\n        *ngIf=\"showLegend && legendType === 'scaleLegend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"isLabelHorizontal(legendOptions)\"\n        [valueRange]=\"legendOptions.domain\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\">\n      </ngx-charts-scale-legend>\n      <ngx-charts-legend\n        *ngIf=\"showLegend && legendType === 'legend' && legendOptions?.position !== 'above'\"\n        class=\"chart-legend\"\n        [horizontal]=\"isLabelHorizontal(legendOptions)\"\n        [data]=\"legendOptions.domain\"\n        [title]=\"legendOptions.title\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\"\n        [activeEntries]=\"activeEntries\"\n        (labelClick)=\"legendLabelClick.emit($event)\"\n        (labelActivate)=\"legendLabelActivate.emit($event)\"\n        (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n    </div>\n  ",
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
             animations: [
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["trigger"])('animationState', [
@@ -9217,7 +9305,7 @@ var GridPanelComponent = /** @class */ (function () {
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_3__axes__["d"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_3__axes__["e"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "E", function() { return __WEBPACK_IMPORTED_MODULE_3__axes__["f"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "L", function() { return __WEBPACK_IMPORTED_MODULE_3__axes__["g"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "M", function() { return __WEBPACK_IMPORTED_MODULE_3__axes__["g"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__count__ = __webpack_require__("./src/common/count/index.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_4__count__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "G", function() { return __WEBPACK_IMPORTED_MODULE_4__count__["b"]; });
@@ -9237,8 +9325,8 @@ var GridPanelComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__circle_series_component__ = __webpack_require__("./src/common/circle-series.component.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_11__circle_series_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__grid_layout_helper__ = __webpack_require__("./src/common/grid-layout.helper.ts");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "J", function() { return __WEBPACK_IMPORTED_MODULE_12__grid_layout_helper__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "K", function() { return __WEBPACK_IMPORTED_MODULE_12__grid_layout_helper__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "K", function() { return __WEBPACK_IMPORTED_MODULE_12__grid_layout_helper__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "L", function() { return __WEBPACK_IMPORTED_MODULE_12__grid_layout_helper__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__grid_panel_component__ = __webpack_require__("./src/common/grid-panel.component.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_13__grid_panel_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__grid_panel_series_component__ = __webpack_require__("./src/common/grid-panel-series.component.ts");
@@ -9250,13 +9338,16 @@ var GridPanelComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__tooltip_area_component__ = __webpack_require__("./src/common/tooltip-area.component.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_17__tooltip_area_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__tick_format_helper__ = __webpack_require__("./src/common/tick-format.helper.ts");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "M", function() { return __WEBPACK_IMPORTED_MODULE_18__tick_format_helper__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "N", function() { return __WEBPACK_IMPORTED_MODULE_18__tick_format_helper__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__trim_label_helper__ = __webpack_require__("./src/common/trim-label.helper.ts");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "N", function() { return __WEBPACK_IMPORTED_MODULE_19__trim_label_helper__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "O", function() { return __WEBPACK_IMPORTED_MODULE_19__trim_label_helper__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__view_dimensions_helper__ = __webpack_require__("./src/common/view-dimensions.helper.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "F", function() { return __WEBPACK_IMPORTED_MODULE_20__view_dimensions_helper__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__label_helper__ = __webpack_require__("./src/common/label.helper.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "I", function() { return __WEBPACK_IMPORTED_MODULE_21__label_helper__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__domain_helper__ = __webpack_require__("./src/common/domain.helper.ts");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "J", function() { return __WEBPACK_IMPORTED_MODULE_22__domain_helper__["a"]; });
+
 
 
 
@@ -9377,6 +9468,7 @@ var AdvancedLegendComponent = /** @class */ (function () {
             var color = _this.colors.getColor(label);
             var percentage = (_this.total > 0) ? value / _this.total * 100 : 0;
             return {
+                _value: value,
                 value: _this.valueFormatting(value),
                 color: color,
                 label: Object(__WEBPACK_IMPORTED_MODULE_1__trim_label_helper__["a" /* trimLabel */])(_this.labelFormatting(label), 20),
@@ -9435,7 +9527,7 @@ var AdvancedLegendComponent = /** @class */ (function () {
     AdvancedLegendComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'ngx-charts-advanced-legend',
-            template: "\n    <div class=\"advanced-pie-legend\"\n      [style.width.px]=\"width\">\n      <div\n        *ngIf=\"animations\"\n        class=\"total-value\"\n        ngx-charts-count-up\n        [countTo]=\"roundedTotal\">\n      </div>\n      <div *ngIf=\"!animations\">\n        {{roundedTotal}}\n      </div>\n      <div class=\"total-label\">\n        {{label}}\n      </div>\n      <div class=\"legend-items-container\">\n        <div class=\"legend-items\">\n          <div\n            *ngFor=\"let legendItem of legendItems; trackBy:trackBy\"\n            tabindex=\"-1\"\n            class=\"legend-item\"\n            (mouseenter)=\"activate.emit(legendItem.label)\"\n            (mouseleave)=\"deactivate.emit(legendItem.label)\"\n            (click)=\"select.emit({ name: legendItem.label, value: legendItem.value })\">\n            <div\n              class=\"item-color\"\n              [style.background]=\"legendItem.color\">\n            </div>\n            <div *ngIf=\"animations\"\n              class=\"item-value\"\n              ngx-charts-count-up\n              [countTo]=\"legendItem.value\">\n            </div>\n            <div *ngIf=\"!animations\" class=\"item-value\">\n              {{legendItem.value}}\n            </div>\n            <div class=\"item-label\">{{legendItem.label}}</div>\n            <div *ngIf=\"animations\"\n              class=\"item-percent\"\n              ngx-charts-count-up\n              [countTo]=\"legendItem.percentage\"\n              [countSuffix]=\"'%'\">\n            </div>\n            <div *ngIf=\"!animations\"\n              class=\"item-percent\">\n              {{legendItem.percentage.toLocaleString()}}%\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  ",
+            template: "\n    <div class=\"advanced-pie-legend\"\n      [style.width.px]=\"width\">\n      <div\n        *ngIf=\"animations\"\n        class=\"total-value\"\n        ngx-charts-count-up\n        [countTo]=\"roundedTotal\" \n        [valueFormatting]=\"valueFormatting\">\n      </div>\n      <div class=\"total-value\" *ngIf=\"!animations\">\n        {{valueFormatting(roundedTotal)}}\n      </div>\n      <div class=\"total-label\">\n        {{label}}\n      </div>\n      <div class=\"legend-items-container\">\n        <div class=\"legend-items\">\n          <div\n            *ngFor=\"let legendItem of legendItems; trackBy:trackBy\"\n            tabindex=\"-1\"\n            class=\"legend-item\"\n            (mouseenter)=\"activate.emit(legendItem.label)\"\n            (mouseleave)=\"deactivate.emit(legendItem.label)\"\n            (click)=\"select.emit({ name: legendItem.label, value: legendItem.value })\">\n            <div\n              class=\"item-color\"\n              [style.border-left-color]=\"legendItem.color\">\n            </div>\n            <div *ngIf=\"animations\"\n              class=\"item-value\"\n              ngx-charts-count-up\n              [countTo]=\"legendItem._value\"\n              [valueFormatting]=\"valueFormatting\">\n            </div>\n            <div *ngIf=\"!animations\" class=\"item-value\">\n              {{valueFormatting(legendItem.value)}}\n            </div>\n            <div class=\"item-label\">{{legendItem.label}}</div>\n            <div *ngIf=\"animations\"\n              class=\"item-percent\"\n              ngx-charts-count-up\n              [countTo]=\"legendItem.percentage\"\n              [countSuffix]=\"'%'\">\n            </div>\n            <div *ngIf=\"!animations\"\n              class=\"item-percent\">\n              {{legendItem.percentage.toLocaleString()}}%\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  ",
             styles: [__webpack_require__("./src/common/legend/advanced-legend.component.scss")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
@@ -9601,6 +9693,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var LegendComponent = /** @class */ (function () {
     function LegendComponent(cd) {
         this.cd = cd;
+        this.horizontal = false;
         this.labelClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.labelActivate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.labelDeactivate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -9677,6 +9770,10 @@ var LegendComponent = /** @class */ (function () {
         __metadata("design:type", Object)
     ], LegendComponent.prototype, "activeEntries", void 0);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], LegendComponent.prototype, "horizontal", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"])
     ], LegendComponent.prototype, "labelClick", void 0);
@@ -9691,7 +9788,7 @@ var LegendComponent = /** @class */ (function () {
     LegendComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'ngx-charts-legend',
-            template: "\n    <div [style.width.px]=\"width\">\n      <header class=\"legend-title\" *ngIf=\"title?.length > 0\">\n        <span class=\"legend-title-text\">{{title}}</span>\n      </header>\n      <div class=\"legend-wrap\">\n        <ul class=\"legend-labels\"\n          [style.max-height.px]=\"height - 45\">\n          <li\n            *ngFor=\"let entry of legendEntries; trackBy: trackBy\"\n            class=\"legend-label\">\n            <ngx-charts-legend-entry\n              [label]=\"entry.label\"\n              [formattedLabel]=\"entry.formattedLabel\"\n              [color]=\"entry.color\"\n              [isActive]=\"isActive(entry)\"\n              (select)=\"labelClick.emit($event)\"\n              (activate)=\"activate($event)\"\n              (deactivate)=\"deactivate($event)\">\n            </ngx-charts-legend-entry>\n          </li>\n        </ul>\n      </div>\n    </div>\n  ",
+            template: "\n    <div [style.width.px]=\"width\">\n      <header class=\"legend-title\" *ngIf=\"title?.length > 0\">\n        <span class=\"legend-title-text\">{{title}}</span>\n      </header>\n      <div class=\"legend-wrap\">\n        <ul class=\"legend-labels\"\n            [class.horizontal-legend]=\"horizontal\"\n          [style.max-height.px]=\"height - 45\">\n          <li\n            *ngFor=\"let entry of legendEntries; trackBy: trackBy\"\n            class=\"legend-label\">\n            <ngx-charts-legend-entry\n              [label]=\"entry.label\"\n              [formattedLabel]=\"entry.formattedLabel\"\n              [color]=\"entry.color\"\n              [isActive]=\"isActive(entry)\"\n              (select)=\"labelClick.emit($event)\"\n              (activate)=\"activate($event)\"\n              (deactivate)=\"deactivate($event)\">\n            </ngx-charts-legend-entry>\n          </li>\n        </ul>\n      </div>\n    </div>\n  ",
             styles: [__webpack_require__("./src/common/legend/legend.component.scss")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
@@ -9743,10 +9840,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ScaleLegendComponent = /** @class */ (function () {
     function ScaleLegendComponent(sanitizer) {
         this.sanitizer = sanitizer;
+        this.horizontal = false;
     }
     ScaleLegendComponent.prototype.ngOnChanges = function (changes) {
         var gradientValues = this.gradientString(this.colors.range(), this.colors.domain());
-        this.gradient = this.sanitizer.bypassSecurityTrustStyle("linear-gradient(to bottom, " + gradientValues + ")");
+        var direction = (this.horizontal) ? 'right' : 'bottom';
+        this.gradient = this.sanitizer.bypassSecurityTrustStyle("linear-gradient(to " + direction + ", " + gradientValues + ")");
     };
     /**
      * Generates the string used in the gradient stylesheet properties
@@ -9779,10 +9878,14 @@ var ScaleLegendComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], ScaleLegendComponent.prototype, "width", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], ScaleLegendComponent.prototype, "horizontal", void 0);
     ScaleLegendComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'ngx-charts-scale-legend',
-            template: "\n    <div\n      class=\"scale-legend\"\n      [style.height.px]=\"height\"\n      [style.width.px]=\"width\">\n      <div class=\"scale-legend-label\">\n        <span>{{ valueRange[1].toLocaleString() }}</span>\n      </div>\n      <div\n        class=\"scale-legend-wrap\"\n        [style.background]=\"gradient\">\n      </div>\n      <div class=\"scale-legend-label\">\n        <span>{{ valueRange[0].toLocaleString() }}</span>\n      </div>\n    </div>\n  ",
+            template: "\n    <div\n      class=\"scale-legend\"\n      [class.horizontal-legend]=\"horizontal\"\n      [style.height.px]=\"horizontal ? undefined : height\"\n      [style.width.px]=\"width\">\n      <div class=\"scale-legend-label\">\n        <span>{{ valueRange[1].toLocaleString() }}</span>\n      </div>\n      <div\n        class=\"scale-legend-wrap\"\n        [style.background]=\"gradient\">\n      </div>\n      <div class=\"scale-legend-label\">\n        <span>{{ valueRange[0].toLocaleString() }}</span>\n      </div>\n    </div>\n  ",
             styles: [__webpack_require__("./src/common/legend/scale-legend.component.scss")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
@@ -10650,6 +10753,16 @@ var InjectionService = /** @class */ (function () {
         this.componentFactoryResolver = componentFactoryResolver;
         this.injector = injector;
     }
+    InjectionService_1 = InjectionService;
+    /**
+     * Sets a default global root view container. This is useful for
+     * things like ngUpgrade that doesn't have a ApplicationRef root.
+     *
+     * @param container
+     */
+    InjectionService.setGlobalRootViewContainer = function (container) {
+        InjectionService_1.globalRootViewContainer = container;
+    };
     /**
      * Gets the root view container to inject the component to.
      *
@@ -10666,6 +10779,8 @@ var InjectionService = /** @class */ (function () {
         }
         if (this._container)
             return this._container;
+        if (InjectionService_1.globalRootViewContainer)
+            return InjectionService_1.globalRootViewContainer;
         throw new Error('View Container not found! ngUpgrade needs to manually set this via setRootViewContainer.');
     };
     /**
@@ -10760,13 +10875,15 @@ var InjectionService = /** @class */ (function () {
         renderer.projectNodes(location, [componentRootNode]);
         return componentRef;
     };
-    InjectionService = __decorate([
+    InjectionService.globalRootViewContainer = null;
+    InjectionService = InjectionService_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"]])
     ], InjectionService);
     return InjectionService;
+    var InjectionService_1;
 }());
 
 
@@ -11709,11 +11826,11 @@ function trimLabel(s, max) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = calculateViewDimensions;
 function calculateViewDimensions(_a) {
-    var width = _a.width, height = _a.height, margins = _a.margins, _b = _a.showXAxis, showXAxis = _b === void 0 ? false : _b, _c = _a.showYAxis, showYAxis = _c === void 0 ? false : _c, _d = _a.xAxisHeight, xAxisHeight = _d === void 0 ? 0 : _d, _e = _a.yAxisWidth, yAxisWidth = _e === void 0 ? 0 : _e, _f = _a.showXLabel, showXLabel = _f === void 0 ? false : _f, _g = _a.showYLabel, showYLabel = _g === void 0 ? false : _g, _h = _a.showLegend, showLegend = _h === void 0 ? false : _h, _j = _a.legendType, legendType = _j === void 0 ? 'ordinal' : _j, _k = _a.columns, columns = _k === void 0 ? 12 : _k;
+    var width = _a.width, height = _a.height, margins = _a.margins, _b = _a.showXAxis, showXAxis = _b === void 0 ? false : _b, _c = _a.showYAxis, showYAxis = _c === void 0 ? false : _c, _d = _a.xAxisHeight, xAxisHeight = _d === void 0 ? 0 : _d, _e = _a.yAxisWidth, yAxisWidth = _e === void 0 ? 0 : _e, _f = _a.showXLabel, showXLabel = _f === void 0 ? false : _f, _g = _a.showYLabel, showYLabel = _g === void 0 ? false : _g, _h = _a.showLegend, showLegend = _h === void 0 ? false : _h, _j = _a.legendType, legendType = _j === void 0 ? 'ordinal' : _j, _k = _a.legendPosition, legendPosition = _k === void 0 ? 'aside' : _k, _l = _a.columns, columns = _l === void 0 ? 12 : _l;
     var xOffset = margins[3];
     var chartWidth = width;
     var chartHeight = height - margins[0] - margins[2];
-    if (showLegend) {
+    if (showLegend && legendPosition === 'right') {
         if (legendType === 'ordinal') {
             columns -= 2;
         }
@@ -11820,6 +11937,7 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             .force('y', Object(__WEBPACK_IMPORTED_MODULE_1_d3_force__["forceY"])());
         _this.forceLink = Object(__WEBPACK_IMPORTED_MODULE_1_d3_force__["forceLink"])().id(function (node) { return node.value; });
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.nodes = [];
         _this.links = [];
         _this.activeEntries = [];
@@ -11839,6 +11957,7 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             height: this.height,
             margins: this.margin,
             showLegend: this.legend,
+            legendPosition: this.legendPosition
         });
         this.seriesDomain = this.getSeriesDomain();
         this.setColors();
@@ -11885,7 +12004,8 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
             scaleType: 'ordinal',
             domain: this.seriesDomain,
             colors: this.colors,
-            title: this.legendTitle
+            title: this.legendTitle,
+            position: this.legendPosition
         };
     };
     // Easier to use Angular2 event management than use d3.drag
@@ -11926,6 +12046,10 @@ var ForceDirectedGraphComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], ForceDirectedGraphComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], ForceDirectedGraphComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Array)
@@ -12366,6 +12490,7 @@ var GaugeComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.min = 0;
         _this.max = 100;
         _this.bigSegments = 10;
@@ -12410,7 +12535,8 @@ var GaugeComponent = /** @class */ (function (_super) {
             width: this.width,
             height: this.height,
             margins: this.margin,
-            showLegend: this.legend
+            showLegend: this.legend,
+            legendPosition: this.legendPosition
         });
         this.domain = this.getDomain();
         this.valueDomain = this.getValueDomain();
@@ -12530,7 +12656,8 @@ var GaugeComponent = /** @class */ (function (_super) {
             scaleType: 'ordinal',
             colors: this.colors,
             domain: this.domain,
-            title: this.legendTitle
+            title: this.legendTitle,
+            position: this.legendPosition
         };
     };
     GaugeComponent.prototype.setColors = function () {
@@ -12573,6 +12700,10 @@ var GaugeComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], GaugeComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], GaugeComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Number)
@@ -13248,6 +13379,7 @@ var HeatMapComponent = /** @class */ (function (_super) {
     function HeatMapComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.innerPadding = 8;
         _this.tooltipDisabled = false;
         _this.margin = [10, 20, 10, 20];
@@ -13274,7 +13406,8 @@ var HeatMapComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.scaleType
+            legendType: this.scaleType,
+            legendPosition: this.legendPosition
         });
         if (this.scaleType === 'linear') {
             var min = this.min;
@@ -13420,7 +13553,8 @@ var HeatMapComponent = /** @class */ (function (_super) {
             scaleType: this.scaleType,
             domain: this.valueDomain,
             colors: this.scaleType === 'ordinal' ? this.colors : this.colors.scale,
-            title: this.scaleType === 'ordinal' ? this.legendTitle : undefined
+            title: this.scaleType === 'ordinal' ? this.legendTitle : undefined,
+            position: this.legendPosition
         };
     };
     HeatMapComponent.prototype.updateYAxisWidth = function (_a) {
@@ -13441,6 +13575,10 @@ var HeatMapComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], HeatMapComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], HeatMapComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -13614,24 +13752,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "XAxisTicksComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["C"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "YAxisComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["D"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "YAxisTicksComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["E"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "reduceTicks", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["L"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "reduceTicks", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["M"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ColorHelper", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["k"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ChartComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["h"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AreaComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "BaseChartComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["f"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "CircleComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["i"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "CircleSeriesComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["j"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "gridSize", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["K"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "gridLayout", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["J"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "gridSize", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["L"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "gridLayout", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["K"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "GridPanelComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["m"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "GridPanelSeriesComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["n"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "SvgLinearGradientComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["t"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "SvgRadialGradientComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["u"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "TooltipArea", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["w"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "tickFormat", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["M"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "trimLabel", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["N"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "tickFormat", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["N"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "trimLabel", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["O"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "calculateViewDimensions", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["F"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "formatLabel", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["I"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "getUniqueXDomainValues", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["J"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "LegendComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["o"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ScaleLegendComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["q"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "LegendEntryComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["p"]; });
@@ -13805,6 +13944,7 @@ var LineChartComponent = /** @class */ (function (_super) {
     function LineChartComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.showGridLines = true;
         _this.curve = __WEBPACK_IMPORTED_MODULE_3_d3_shape__["curveLinear"];
         _this.activeEntries = [];
@@ -13835,6 +13975,7 @@ var LineChartComponent = /** @class */ (function (_super) {
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
             legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.timeline) {
             this.dims.height -= (this.timelineHeight + this.margin[2] + this.timelinePadding);
@@ -14031,7 +14172,8 @@ var LineChartComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.seriesDomain;
@@ -14089,6 +14231,10 @@ var LineChartComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], LineChartComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], LineChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -15734,11 +15880,13 @@ var PieChartComponent = /** @class */ (function (_super) {
         _this.labels = false;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.explodeSlices = false;
         _this.doughnut = false;
         _this.arcWidth = 0.25;
         _this.activeEntries = [];
         _this.tooltipDisabled = false;
+        _this.labelsPositionOutside = true;
         _this.trimLabels = true;
         _this.maxLabelLength = 10;
         _this.dblclick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -15751,7 +15899,7 @@ var PieChartComponent = /** @class */ (function (_super) {
     PieChartComponent.prototype.update = function () {
         var _this = this;
         _super.prototype.update.call(this);
-        if (this.labels) {
+        if (this.labels && this.labelsPositionOutside) {
             this.margin = [30, 80, 30, 80];
         }
         this.dims = Object(__WEBPACK_IMPORTED_MODULE_1__common_view_dimensions_helper__["a" /* calculateViewDimensions */])({
@@ -15759,12 +15907,13 @@ var PieChartComponent = /** @class */ (function (_super) {
             height: this.height,
             margins: this.margin,
             showLegend: this.legend,
+            legendPosition: this.legendPosition
         });
         var xOffset = this.margin[3] + this.dims.width / 2;
         var yOffset = this.margin[0] + this.dims.height / 2;
         this.translation = "translate(" + xOffset + ", " + yOffset + ")";
         this.outerRadius = Math.min(this.dims.width, this.dims.height);
-        if (this.labels) {
+        if (this.labels && this.labelsPositionOutside) {
             // make room for labels
             this.outerRadius /= 3;
         }
@@ -15810,7 +15959,8 @@ var PieChartComponent = /** @class */ (function (_super) {
             scaleType: 'ordinal',
             domain: this.domain,
             colors: this.colors,
-            title: this.legendTitle
+            title: this.legendTitle,
+            position: this.legendPosition
         };
     };
     PieChartComponent.prototype.onActivate = function (item) {
@@ -15845,6 +15995,10 @@ var PieChartComponent = /** @class */ (function (_super) {
     ], PieChartComponent.prototype, "legendTitle", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], PieChartComponent.prototype, "legendPosition", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], PieChartComponent.prototype, "explodeSlices", void 0);
     __decorate([
@@ -15871,6 +16025,10 @@ var PieChartComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], PieChartComponent.prototype, "labelFormatting", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], PieChartComponent.prototype, "labelsPositionOutside", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
@@ -15906,7 +16064,7 @@ var PieChartComponent = /** @class */ (function (_super) {
     PieChartComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'ngx-charts-pie-chart',
-            template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [activeEntries]=\"activeEntries\"\n      [animations]=\"animations\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\"\n      (legendLabelClick)=\"onClick($event)\">\n      <svg:g [attr.transform]=\"translation\" class=\"pie-chart chart\">\n        <svg:g ngx-charts-pie-series\n          [colors]=\"colors\"\n          [series]=\"data\"\n          [showLabels]=\"labels\"\n          [labelFormatting]=\"labelFormatting\"\n          [trimLabels]=\"trimLabels\"\n          [maxLabelLength]=\"maxLabelLength\"\n          [activeEntries]=\"activeEntries\"\n          [innerRadius]=\"innerRadius\"\n          [outerRadius]=\"outerRadius\"\n          [explodeSlices]=\"explodeSlices\"\n          [gradient]=\"gradient\"\n          [animations]=\"animations\"\n          [tooltipDisabled]=\"tooltipDisabled\"\n          [tooltipTemplate]=\"tooltipTemplate\"\n          [tooltipText]=\"tooltipText\"\n          (dblclick)=\"dblclick.emit($event)\"\n          (select)=\"onClick($event)\"\n          (activate)=\"onActivate($event)\"\n          (deactivate)=\"onDeactivate($event)\"\n        />\n      </svg:g>\n    </ngx-charts-chart>\n  ",
+            template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [activeEntries]=\"activeEntries\"\n      [animations]=\"animations\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\"\n      (legendLabelClick)=\"onClick($event)\">\n      <svg:g [attr.transform]=\"translation\" class=\"pie-chart chart\">\n        <svg:g ngx-charts-pie-series\n          [colors]=\"colors\"\n          [series]=\"data\"\n          [showLabels]=\"labels\"\n          [labelsPositionOutside]=\"labelsPositionOutside\"\n          [labelFormatting]=\"labelFormatting\"\n          [trimLabels]=\"trimLabels\"\n          [maxLabelLength]=\"maxLabelLength\"\n          [activeEntries]=\"activeEntries\"\n          [innerRadius]=\"innerRadius\"\n          [outerRadius]=\"outerRadius\"\n          [explodeSlices]=\"explodeSlices\"\n          [gradient]=\"gradient\"\n          [animations]=\"animations\"\n          [tooltipDisabled]=\"tooltipDisabled\"\n          [tooltipTemplate]=\"tooltipTemplate\"\n          [tooltipText]=\"tooltipText\"\n          (dblclick)=\"dblclick.emit($event)\"\n          (select)=\"onClick($event)\"\n          (activate)=\"onActivate($event)\"\n          (deactivate)=\"onDeactivate($event)\"\n        />\n      </svg:g>\n    </ngx-charts-chart>\n  ",
             styles: [
                 __webpack_require__("./src/common/base-chart.component.scss"),
                 __webpack_require__("./src/pie-chart/pie-chart.component.scss")
@@ -16399,6 +16557,10 @@ var PieLabelComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
+    ], PieLabelComponent.prototype, "labelsPositionOutside", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
     ], PieLabelComponent.prototype, "color", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
@@ -16427,7 +16589,7 @@ var PieLabelComponent = /** @class */ (function () {
     PieLabelComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'g[ngx-charts-pie-label]',
-            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{labelTrim ? trimLabel(label, labelTrimSize) : label}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
+            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{labelTrim ? trimLabel(label, labelTrimSize) : label}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      *ngIf=\"labelsPositionOutside\"\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
         }),
         __metadata("design:paramtypes", [])
@@ -16496,7 +16658,7 @@ var PieSeriesComponent = /** @class */ (function () {
         return d.startAngle + (d.endAngle - d.startAngle) / 2;
     };
     PieSeriesComponent.prototype.outerArc = function () {
-        var factor = 1.5;
+        var factor = this.labelsPositionOutside ? 1.5 : .5;
         return Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])()
             .innerRadius(this.outerRadius * factor)
             .outerRadius(this.outerRadius * factor);
@@ -16504,11 +16666,13 @@ var PieSeriesComponent = /** @class */ (function () {
     PieSeriesComponent.prototype.calculateLabelPositions = function (pieData) {
         var _this = this;
         var factor = 1.5;
-        var minDistance = 10;
+        var minDistance = 0;
         var labelPositions = pieData;
         labelPositions.forEach(function (d) {
             d.pos = _this.outerArc().centroid(d);
-            d.pos[0] = factor * _this.outerRadius * (_this.midAngle(d) < Math.PI ? 1 : -1);
+            if (_this.labelsPositionOutside) {
+                d.pos[0] = factor * _this.outerRadius * (_this.midAngle(d) < Math.PI ? 1 : -1);
+            }
         });
         for (var i = 0; i < labelPositions.length - 1; i++) {
             var a = labelPositions[i];
@@ -16600,6 +16764,10 @@ var PieSeriesComponent = /** @class */ (function () {
     ], PieSeriesComponent.prototype, "showLabels", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], PieSeriesComponent.prototype, "labelsPositionOutside", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
     ], PieSeriesComponent.prototype, "gradient", void 0);
     __decorate([
@@ -16653,7 +16821,7 @@ var PieSeriesComponent = /** @class */ (function () {
     PieSeriesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'g[ngx-charts-pie-series]',
-            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g ngx-charts-pie-label\n        *ngIf=\"labelVisible(arc)\"\n        [data]=\"arc\"\n        [radius]=\"outerRadius\"\n        [color]=\"color(arc)\"\n        [label]=\"labelText(arc)\"\n        [labelTrim]=\"trimLabels\"\n        [labelTrimSize]=\"maxLabelLength\"\n        [max]=\"max\"\n        [value]=\"arc.value\"\n        [explodeSlices]=\"explodeSlices\"\n        [animations]=\"animations\">\n      </svg:g>\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        (dblclick)=\"dblclick.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"getTooltipTitle(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n    </svg:g>\n  ",
+            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        (dblclick)=\"dblclick.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"getTooltipTitle(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n      <svg:g ngx-charts-pie-label\n             *ngIf=\"labelVisible(arc)\"\n             [data]=\"arc\"\n             [radius]=\"outerRadius\"\n             [color]=\"color(arc)\"\n             [label]=\"labelText(arc)\"\n             [labelsPositionOutside]=\"labelsPositionOutside\"\n             [labelTrim]=\"trimLabels\"\n             [labelTrimSize]=\"maxLabelLength\"\n             [max]=\"max\"\n             [value]=\"arc.value\"\n             [explodeSlices]=\"explodeSlices\"\n             [animations]=\"animations\">\n      </svg:g>\n    </svg:g>\n  ",
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
         })
     ], PieSeriesComponent);
@@ -16756,6 +16924,7 @@ var PolarChartComponent = /** @class */ (function (_super) {
     function PolarChartComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.showGridLines = true;
         _this.curve = __WEBPACK_IMPORTED_MODULE_3_d3_shape__["curveCardinalClosed"];
         _this.activeEntries = [];
@@ -16794,7 +16963,8 @@ var PolarChartComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         var halfWidth = ~~(this.dims.width / 2);
         var halfHeight = ~~(this.dims.height / 2);
@@ -16997,14 +17167,16 @@ var PolarChartComponent = /** @class */ (function (_super) {
                 scaleType: this.schemeType,
                 colors: this.colors,
                 domain: this.seriesDomain,
-                title: this.legendTitle
+                title: this.legendTitle,
+                position: this.legendPosition
             };
         }
         return {
             scaleType: this.schemeType,
             colors: this.colors.scale,
             domain: this.yDomain,
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
     };
     PolarChartComponent.prototype.updateYAxisWidth = function (_a) {
@@ -17054,6 +17226,10 @@ var PolarChartComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], PolarChartComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], PolarChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)

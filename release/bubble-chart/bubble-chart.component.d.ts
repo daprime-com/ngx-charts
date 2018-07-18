@@ -6,6 +6,7 @@ export declare class BubbleChartComponent extends BaseChartComponent {
     showGridLines: boolean;
     legend: boolean;
     legendTitle: string;
+    legendPosition: string;
     xAxis: boolean;
     yAxis: boolean;
     showXAxisLabel: boolean;
@@ -21,7 +22,6 @@ export declare class BubbleChartComponent extends BaseChartComponent {
     minRadius: number;
     autoScale: boolean;
     schemeType: string;
-    legendPosition: string;
     tooltipDisabled: boolean;
     xScaleMin: any;
     xScaleMax: any;

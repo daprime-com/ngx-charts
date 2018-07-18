@@ -5,6 +5,7 @@ import { BaseChartComponent } from '../common/base-chart.component';
 export declare class AreaChartComponent extends BaseChartComponent {
     legend: any;
     legendTitle: string;
+    legendPosition: string;
     state: any;
     xAxis: any;
     yAxis: any;
@@ -80,6 +81,7 @@ export declare class AreaChartComponent extends BaseChartComponent {
         colors: any;
         domain: any[];
         title: any;
+        position: string;
     };
     updateYAxisWidth({width}: {
         width: any;

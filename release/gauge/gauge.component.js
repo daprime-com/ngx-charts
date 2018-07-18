@@ -28,6 +28,7 @@ var GaugeComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.min = 0;
         _this.max = 100;
         _this.bigSegments = 10;
@@ -72,7 +73,8 @@ var GaugeComponent = /** @class */ (function (_super) {
             width: this.width,
             height: this.height,
             margins: this.margin,
-            showLegend: this.legend
+            showLegend: this.legend,
+            legendPosition: this.legendPosition
         });
         this.domain = this.getDomain();
         this.valueDomain = this.getValueDomain();
@@ -192,7 +194,8 @@ var GaugeComponent = /** @class */ (function (_super) {
             scaleType: 'ordinal',
             colors: this.colors,
             domain: this.domain,
-            title: this.legendTitle
+            title: this.legendTitle,
+            position: this.legendPosition
         };
     };
     GaugeComponent.prototype.setColors = function () {
@@ -235,6 +238,10 @@ var GaugeComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], GaugeComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], GaugeComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Number)

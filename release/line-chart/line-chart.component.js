@@ -31,6 +31,7 @@ var LineChartComponent = /** @class */ (function (_super) {
     function LineChartComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.showGridLines = true;
         _this.curve = curveLinear;
         _this.activeEntries = [];
@@ -61,6 +62,7 @@ var LineChartComponent = /** @class */ (function (_super) {
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
             legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         if (this.timeline) {
             this.dims.height -= (this.timelineHeight + this.margin[2] + this.timelinePadding);
@@ -257,7 +259,8 @@ var LineChartComponent = /** @class */ (function (_super) {
             scaleType: this.schemeType,
             colors: undefined,
             domain: [],
-            title: undefined
+            title: undefined,
+            position: this.legendPosition
         };
         if (opts.scaleType === 'ordinal') {
             opts.domain = this.seriesDomain;
@@ -315,6 +318,10 @@ var LineChartComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], LineChartComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], LineChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Object)

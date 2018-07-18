@@ -32,13 +32,13 @@ var BubbleChartComponent = /** @class */ (function (_super) {
         _this.showGridLines = true;
         _this.legend = false;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.xAxis = true;
         _this.yAxis = true;
         _this.roundDomains = false;
         _this.maxRadius = 10;
         _this.minRadius = 3;
         _this.schemeType = 'ordinal';
-        _this.legendPosition = 'right';
         _this.tooltipDisabled = false;
         _this.activate = new EventEmitter();
         _this.deactivate = new EventEmitter();
@@ -63,7 +63,8 @@ var BubbleChartComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.schemeType
+            legendType: this.schemeType,
+            legendPosition: this.legendPosition
         });
         this.seriesDomain = this.results.map(function (d) { return d.name; });
         this.rDomain = this.getRDomain();
@@ -253,6 +254,10 @@ var BubbleChartComponent = /** @class */ (function (_super) {
     ], BubbleChartComponent.prototype, "legendTitle", void 0);
     __decorate([
         Input(),
+        __metadata("design:type", String)
+    ], BubbleChartComponent.prototype, "legendPosition", void 0);
+    __decorate([
+        Input(),
         __metadata("design:type", Boolean)
     ], BubbleChartComponent.prototype, "xAxis", void 0);
     __decorate([
@@ -311,10 +316,6 @@ var BubbleChartComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", Object)
     ], BubbleChartComponent.prototype, "schemeType", void 0);
-    __decorate([
-        Input(),
-        __metadata("design:type", String)
-    ], BubbleChartComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Boolean)

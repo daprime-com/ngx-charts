@@ -27,6 +27,7 @@ var HeatMapComponent = /** @class */ (function (_super) {
     function HeatMapComponent() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.legendTitle = 'Legend';
+        _this.legendPosition = 'right';
         _this.innerPadding = 8;
         _this.tooltipDisabled = false;
         _this.margin = [10, 20, 10, 20];
@@ -53,7 +54,8 @@ var HeatMapComponent = /** @class */ (function (_super) {
             showXLabel: this.showXAxisLabel,
             showYLabel: this.showYAxisLabel,
             showLegend: this.legend,
-            legendType: this.scaleType
+            legendType: this.scaleType,
+            legendPosition: this.legendPosition
         });
         if (this.scaleType === 'linear') {
             var min = this.min;
@@ -199,7 +201,8 @@ var HeatMapComponent = /** @class */ (function (_super) {
             scaleType: this.scaleType,
             domain: this.valueDomain,
             colors: this.scaleType === 'ordinal' ? this.colors : this.colors.scale,
-            title: this.scaleType === 'ordinal' ? this.legendTitle : undefined
+            title: this.scaleType === 'ordinal' ? this.legendTitle : undefined,
+            position: this.legendPosition
         };
     };
     HeatMapComponent.prototype.updateYAxisWidth = function (_a) {
@@ -220,6 +223,10 @@ var HeatMapComponent = /** @class */ (function (_super) {
         Input(),
         __metadata("design:type", String)
     ], HeatMapComponent.prototype, "legendTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], HeatMapComponent.prototype, "legendPosition", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Object)
