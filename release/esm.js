@@ -1090,6 +1090,12 @@ var ChartComponent = /** @class */ (function () {
         this.legendLabelDeactivate = new EventEmitter();
         this.tooltipService.injectionService.setRootViewContainer(this.vcr);
     }
+    ChartComponent.prototype.isLabelHorizontal = function (legendOptions) {
+        if (!legendOptions) {
+            return false;
+        }
+        return ~['below', 'above'].indexOf(legendOptions.position);
+    };
     ChartComponent.prototype.ngOnChanges = function (changes) {
         this.update();
     };
@@ -1173,7 +1179,7 @@ var ChartComponent = /** @class */ (function () {
         Component({
             providers: [TooltipService],
             selector: 'ngx-charts-chart',
-            template: "\n    <div\n      class=\"ngx-charts-outer\"\n      [style.width.px]=\"view[0]\"\n      [@animationState]=\"'active'\"\n      [@.disabled]=\"!animations\">\n      <svg\n        class=\"ngx-charts\"\n        [attr.width]=\"chartWidth\"\n        [attr.height]=\"view[1]\">\n        <ng-content></ng-content>\n      </svg>\n      <ngx-charts-scale-legend\n        *ngIf=\"showLegend && legendType === 'scaleLegend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"legendOptions && legendOptions.position === 'below'\"\n        [valueRange]=\"legendOptions.domain\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\">\n      </ngx-charts-scale-legend>\n      <ngx-charts-legend\n        *ngIf=\"showLegend && legendType === 'legend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"legendOptions && legendOptions.position === 'below'\"\n        [data]=\"legendOptions.domain\"\n        [title]=\"legendOptions.title\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\"\n        [activeEntries]=\"activeEntries\"\n        (labelClick)=\"legendLabelClick.emit($event)\"\n        (labelActivate)=\"legendLabelActivate.emit($event)\"\n        (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n    </div>\n  ",
+            template: "\n    <div\n      class=\"ngx-charts-outer\"\n      [style.width.px]=\"view[0]\"\n      [@animationState]=\"'active'\"\n      [@.disabled]=\"!animations\">\n      <ngx-charts-legend\n              *ngIf=\"showLegend && legendType === 'legend' && legendOptions?.position === 'above'\"\n              class=\"chart-legend\"\n              [horizontal]=\"isLabelHorizontal(legendOptions)\"\n              [data]=\"legendOptions.domain\"\n              [title]=\"legendOptions.title\"\n              [colors]=\"legendOptions.colors\"\n              [height]=\"view[1]\"\n              [width]=\"legendWidth\"\n              [activeEntries]=\"activeEntries\"\n              (labelClick)=\"legendLabelClick.emit($event)\"\n              (labelActivate)=\"legendLabelActivate.emit($event)\"\n              (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n      <svg\n        class=\"ngx-charts\"\n        [attr.width]=\"chartWidth\"\n        [attr.height]=\"view[1]\">\n        <ng-content></ng-content>\n      </svg>\n      <ngx-charts-scale-legend\n        *ngIf=\"showLegend && legendType === 'scaleLegend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"isLabelHorizontal(legendOptions)\"\n        [valueRange]=\"legendOptions.domain\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\">\n      </ngx-charts-scale-legend>\n      <ngx-charts-legend\n        *ngIf=\"showLegend && legendType === 'legend' && legendOptions?.position !== 'above'\"\n        class=\"chart-legend\"\n        [horizontal]=\"isLabelHorizontal(legendOptions)\"\n        [data]=\"legendOptions.domain\"\n        [title]=\"legendOptions.title\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\"\n        [activeEntries]=\"activeEntries\"\n        (labelClick)=\"legendLabelClick.emit($event)\"\n        (labelActivate)=\"legendLabelActivate.emit($event)\"\n        (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n    </div>\n  ",
             changeDetection: ChangeDetectionStrategy.OnPush,
             animations: [
                 trigger('animationState', [
@@ -11826,6 +11832,9 @@ var PieLabelComponent = /** @class */ (function () {
         configurable: true
     });
     PieLabelComponent.prototype.textAnchor = function () {
+        if (!this.labelsPositionOutside) {
+            return 'middle';
+        }
         return this.midAngle(this.data) < Math.PI ? 'start' : 'end';
     };
     PieLabelComponent.prototype.midAngle = function (d) {
@@ -11843,6 +11852,10 @@ var PieLabelComponent = /** @class */ (function () {
         Input(),
         __metadata("design:type", Object)
     ], PieLabelComponent.prototype, "label", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], PieLabelComponent.prototype, "labelsPositionOutside", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Object)
@@ -11874,7 +11887,7 @@ var PieLabelComponent = /** @class */ (function () {
     PieLabelComponent = __decorate([
         Component({
             selector: 'g[ngx-charts-pie-label]',
-            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{labelTrim ? trimLabel(label, labelTrimSize) : label}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
+            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{labelTrim ? trimLabel(label, labelTrimSize) : label}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      *ngIf=\"labelsPositionOutside\"\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
             changeDetection: ChangeDetectionStrategy.OnPush
         }),
         __metadata("design:paramtypes", [])
@@ -12090,6 +12103,7 @@ var PieChartComponent = /** @class */ (function (_super) {
         _this.arcWidth = 0.25;
         _this.activeEntries = [];
         _this.tooltipDisabled = false;
+        _this.labelsPositionOutside = true;
         _this.trimLabels = true;
         _this.maxLabelLength = 10;
         _this.dblclick = new EventEmitter();
@@ -12102,7 +12116,7 @@ var PieChartComponent = /** @class */ (function (_super) {
     PieChartComponent.prototype.update = function () {
         var _this = this;
         _super.prototype.update.call(this);
-        if (this.labels) {
+        if (this.labels && this.labelsPositionOutside) {
             this.margin = [30, 80, 30, 80];
         }
         this.dims = calculateViewDimensions({
@@ -12116,7 +12130,7 @@ var PieChartComponent = /** @class */ (function (_super) {
         var yOffset = this.margin[0] + this.dims.height / 2;
         this.translation = "translate(" + xOffset + ", " + yOffset + ")";
         this.outerRadius = Math.min(this.dims.width, this.dims.height);
-        if (this.labels) {
+        if (this.labels && this.labelsPositionOutside) {
             this.outerRadius /= 3;
         }
         else {
@@ -12229,6 +12243,10 @@ var PieChartComponent = /** @class */ (function (_super) {
     ], PieChartComponent.prototype, "labelFormatting", void 0);
     __decorate([
         Input(),
+        __metadata("design:type", Object)
+    ], PieChartComponent.prototype, "labelsPositionOutside", void 0);
+    __decorate([
+        Input(),
         __metadata("design:type", Boolean)
     ], PieChartComponent.prototype, "trimLabels", void 0);
     __decorate([
@@ -12262,7 +12280,7 @@ var PieChartComponent = /** @class */ (function (_super) {
     PieChartComponent = __decorate([
         Component({
             selector: 'ngx-charts-pie-chart',
-            template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [activeEntries]=\"activeEntries\"\n      [animations]=\"animations\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\"\n      (legendLabelClick)=\"onClick($event)\">\n      <svg:g [attr.transform]=\"translation\" class=\"pie-chart chart\">\n        <svg:g ngx-charts-pie-series\n          [colors]=\"colors\"\n          [series]=\"data\"\n          [showLabels]=\"labels\"\n          [labelFormatting]=\"labelFormatting\"\n          [trimLabels]=\"trimLabels\"\n          [maxLabelLength]=\"maxLabelLength\"\n          [activeEntries]=\"activeEntries\"\n          [innerRadius]=\"innerRadius\"\n          [outerRadius]=\"outerRadius\"\n          [explodeSlices]=\"explodeSlices\"\n          [gradient]=\"gradient\"\n          [animations]=\"animations\"\n          [tooltipDisabled]=\"tooltipDisabled\"\n          [tooltipTemplate]=\"tooltipTemplate\"\n          [tooltipText]=\"tooltipText\"\n          (dblclick)=\"dblclick.emit($event)\"\n          (select)=\"onClick($event)\"\n          (activate)=\"onActivate($event)\"\n          (deactivate)=\"onDeactivate($event)\"\n        />\n      </svg:g>\n    </ngx-charts-chart>\n  ",
+            template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [activeEntries]=\"activeEntries\"\n      [animations]=\"animations\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\"\n      (legendLabelClick)=\"onClick($event)\">\n      <svg:g [attr.transform]=\"translation\" class=\"pie-chart chart\">\n        <svg:g ngx-charts-pie-series\n          [colors]=\"colors\"\n          [series]=\"data\"\n          [showLabels]=\"labels\"\n          [labelsPositionOutside]=\"labelsPositionOutside\"\n          [labelFormatting]=\"labelFormatting\"\n          [trimLabels]=\"trimLabels\"\n          [maxLabelLength]=\"maxLabelLength\"\n          [activeEntries]=\"activeEntries\"\n          [innerRadius]=\"innerRadius\"\n          [outerRadius]=\"outerRadius\"\n          [explodeSlices]=\"explodeSlices\"\n          [gradient]=\"gradient\"\n          [animations]=\"animations\"\n          [tooltipDisabled]=\"tooltipDisabled\"\n          [tooltipTemplate]=\"tooltipTemplate\"\n          [tooltipText]=\"tooltipText\"\n          (dblclick)=\"dblclick.emit($event)\"\n          (select)=\"onClick($event)\"\n          (activate)=\"onActivate($event)\"\n          (deactivate)=\"onDeactivate($event)\"\n        />\n      </svg:g>\n    </ngx-charts-chart>\n  ",
             styles: [
                 ".ngx-charts{float:left;overflow:visible}.ngx-charts .arc,.ngx-charts .bar,.ngx-charts .circle{cursor:pointer}.ngx-charts .arc.active,.ngx-charts .arc:hover,.ngx-charts .bar.active,.ngx-charts .bar:hover,.ngx-charts .card.active,.ngx-charts .card:hover,.ngx-charts .cell.active,.ngx-charts .cell:hover{opacity:.8;transition:opacity .1s ease-in-out}.ngx-charts .arc:focus,.ngx-charts .bar:focus,.ngx-charts .card:focus,.ngx-charts .cell:focus{outline:0}.ngx-charts g:focus{outline:0}.ngx-charts .area-series.inactive,.ngx-charts .line-series-range.inactive,.ngx-charts .line-series.inactive,.ngx-charts .polar-series-area.inactive,.ngx-charts .polar-series-path.inactive{transition:opacity .1s ease-in-out;opacity:.2}.ngx-charts .line-highlight{display:none}.ngx-charts .line-highlight.active{display:block}.ngx-charts .area{opacity:.6}.ngx-charts .circle:hover{cursor:pointer}.ngx-charts .label{font-size:12px;font-weight:400}.ngx-charts .tooltip-anchor{fill:#000}.ngx-charts .gridline-path{stroke:#ddd;stroke-width:1;fill:none}.ngx-charts .refline-path{stroke:#a8b2c7;stroke-width:1;stroke-dasharray:5;stroke-dashoffset:5}.ngx-charts .refline-label{font-size:9px}.ngx-charts .reference-area{fill-opacity:.05;fill:#000}.ngx-charts .gridline-path-dotted{stroke:#ddd;stroke-width:1;fill:none;stroke-dasharray:1,20;stroke-dashoffset:3}.ngx-charts .grid-panel rect{fill:none}.ngx-charts .grid-panel.odd rect{fill:rgba(0,0,0,.05)}",
                 ".pie-label{font-size:11px}.pie-label.animation{animation:750ms ease-in fadeIn}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.pie-label-line{stroke-dasharray:100%}.pie-label-line.animation{animation:3s linear drawOut;transition:d 750ms}@keyframes drawOut{from{stroke-dashoffset:100%}to{stroke-dashoffset:0}}"
@@ -12576,7 +12594,7 @@ var PieSeriesComponent = /** @class */ (function () {
         return d.startAngle + (d.endAngle - d.startAngle) / 2;
     };
     PieSeriesComponent.prototype.outerArc = function () {
-        var factor = 1.5;
+        var factor = this.labelsPositionOutside ? 1.5 : 0.5;
         return arc()
             .innerRadius(this.outerRadius * factor)
             .outerRadius(this.outerRadius * factor);
@@ -12588,7 +12606,9 @@ var PieSeriesComponent = /** @class */ (function () {
         var labelPositions = pieData;
         labelPositions.forEach(function (d) {
             d.pos = _this.outerArc().centroid(d);
-            d.pos[0] = factor * _this.outerRadius * (_this.midAngle(d) < Math.PI ? 1 : -1);
+            if (_this.labelsPositionOutside) {
+                d.pos[0] = factor * _this.outerRadius * (_this.midAngle(d) < Math.PI ? 1 : -1);
+            }
         });
         for (var i = 0; i < labelPositions.length - 1; i++) {
             var a = labelPositions[i];
@@ -12681,6 +12701,10 @@ var PieSeriesComponent = /** @class */ (function () {
     ], PieSeriesComponent.prototype, "showLabels", void 0);
     __decorate([
         Input(),
+        __metadata("design:type", Object)
+    ], PieSeriesComponent.prototype, "labelsPositionOutside", void 0);
+    __decorate([
+        Input(),
         __metadata("design:type", Boolean)
     ], PieSeriesComponent.prototype, "gradient", void 0);
     __decorate([
@@ -12734,7 +12758,7 @@ var PieSeriesComponent = /** @class */ (function () {
     PieSeriesComponent = __decorate([
         Component({
             selector: 'g[ngx-charts-pie-series]',
-            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g ngx-charts-pie-label\n        *ngIf=\"labelVisible(arc)\"\n        [data]=\"arc\"\n        [radius]=\"outerRadius\"\n        [color]=\"color(arc)\"\n        [label]=\"labelText(arc)\"\n        [labelTrim]=\"trimLabels\"\n        [labelTrimSize]=\"maxLabelLength\"\n        [max]=\"max\"\n        [value]=\"arc.value\"\n        [explodeSlices]=\"explodeSlices\"\n        [animations]=\"animations\">\n      </svg:g>\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        (dblclick)=\"dblclick.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"getTooltipTitle(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n    </svg:g>\n  ",
+            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        (dblclick)=\"dblclick.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"getTooltipTitle(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n      <svg:g ngx-charts-pie-label\n             *ngIf=\"labelVisible(arc)\"\n             [data]=\"arc\"\n             [radius]=\"outerRadius\"\n             [color]=\"color(arc)\"\n             [label]=\"labelText(arc)\"\n             [labelsPositionOutside]=\"labelsPositionOutside\"\n             [labelTrim]=\"trimLabels\"\n             [labelTrimSize]=\"maxLabelLength\"\n             [max]=\"max\"\n             [value]=\"arc.value\"\n             [explodeSlices]=\"explodeSlices\"\n             [animations]=\"animations\">\n      </svg:g>\n    </svg:g>\n  ",
             changeDetection: ChangeDetectionStrategy.OnPush
         })
     ], PieSeriesComponent);
