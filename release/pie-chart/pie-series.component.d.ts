@@ -7,6 +7,7 @@ export declare class PieSeriesComponent implements OnChanges {
     outerRadius: number;
     explodeSlices: any;
     showLabels: any;
+    labelsPositionOutside: any;
     gradient: boolean;
     activeEntries: any[];
     labelFormatting: any;

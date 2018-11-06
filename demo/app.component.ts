@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
   gradient = false;
   showLegend = true;
   legendTitle = 'Legend';
-  legendPosition = 'right';
+  legendPosition = 'above';
   showXAxisLabel = true;
   tooltipDisabled = false;
   xAxisLabel = 'Country';
@@ -153,6 +153,7 @@ export class AppComponent implements OnInit {
 
   // pie
   showLabels = true;
+  labelsPositionOutside = false;
   explodeSlices = false;
   doughnut = false;
   arcWidth = 0.25;

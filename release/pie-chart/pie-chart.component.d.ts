@@ -13,6 +13,7 @@ export declare class PieChartComponent extends BaseChartComponent {
     activeEntries: any[];
     tooltipDisabled: boolean;
     labelFormatting: any;
+    labelsPositionOutside: boolean;
     trimLabels: boolean;
     maxLabelLength: number;
     tooltipText: any;

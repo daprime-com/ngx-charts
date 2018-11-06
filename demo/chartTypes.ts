@@ -252,6 +252,7 @@ const chartGroups = [
           'arcWidth',
           'explodeSlices',
           'showLabels',
+          'labelsPositionOutside',
           'tooltipDisabled'
         ]
       },

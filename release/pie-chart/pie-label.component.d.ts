@@ -3,6 +3,7 @@ export declare class PieLabelComponent implements OnChanges {
     data: any;
     radius: any;
     label: any;
+    labelsPositionOutside: any;
     color: any;
     max: any;
     value: any;

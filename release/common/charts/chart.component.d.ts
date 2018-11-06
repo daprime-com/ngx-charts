@@ -19,6 +19,7 @@ export declare class ChartComponent implements OnChanges {
     title: any;
     legendWidth: any;
     constructor(vcr: ViewContainerRef, tooltipService: TooltipService);
+    isLabelHorizontal(legendOptions: any): number | false;
     ngOnChanges(changes: SimpleChanges): void;
     update(): void;
     getLegendType(): string;
