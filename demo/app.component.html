@@ -937,9 +937,9 @@
           </label> <br/>
           <div *ngIf="!fitContainer">
             <label>Width:</label><br/>
-            <input type="number" [(ngModel)]="width"><br/>
+            <input [(ngModel)]="width"><br/>
             <label>Height:</label><br/>
-            <input type="number" [(ngModel)]="height"><br/><br/>
+            <input [(ngModel)]="height"><br/><br/>
             <button class="btn btn-primary" (click)="applyDimensions()">Apply dimensions</button>
           </div>
         </div>

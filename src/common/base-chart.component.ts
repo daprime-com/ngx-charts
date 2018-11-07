@@ -15,7 +15,7 @@ import { VisibilityObserver } from '../utils';
 export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
 
   @Input() results: any;
-  @Input() view: number[];
+  @Input() view: string[];
   @Input() scheme: any = 'cool';
   @Input() schemeType: string = 'ordinal';
   @Input() customColors: any;
@@ -61,28 +61,39 @@ export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
       this.results =  [];
     }
 
+    let width: string;
+    let height: string;
+
     if (this.view) {
-      this.width = this.view[0];
-      this.height = this.view[1];
-    } else {
+      width = this.view[0];
+      height = this.view[1];
+    }
+
+    if (!this.view || width === 'auto' || height === 'auto') {
       const dims = this.getContainerDims();
       if (dims) {
-        this.width = dims.width;
-        this.height = dims.height;
+      	if (!width || width === 'auto') {
+      		width = dims.width;
+		}
+
+      	if (!height || height === 'auto') {
+			height = dims.height;
+		}
       }
     }
 
     // default values if width or height are 0 or undefined
-    if (!this.width) {
-      this.width = 600;
+    if (!width) {
+      width = '600';
     }
 
-    if (!this.height) {
-      this.height = 400;
+    if (!height) {
+      height = '400';
     }
+	  console.log("WIDTH, HEIGHT", width, height);
 
-    this.width = ~~this.width;
-    this.height = ~~this.height;
+    this.width = ~~width;
+    this.height = ~~height;
 
     if (this.cd) {
       this.cd.markForCheck();

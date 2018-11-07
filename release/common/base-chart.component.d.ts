@@ -5,7 +5,7 @@ export declare class BaseChartComponent implements OnChanges, AfterViewInit, OnD
     protected zone: NgZone;
     protected cd: ChangeDetectorRef;
     results: any;
-    view: number[];
+    view: string[];
     scheme: any;
     schemeType: string;
     customColors: any;
