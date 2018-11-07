@@ -1915,7 +1915,6 @@ var BaseChartComponent = /** @class */ (function () {
         if (!height) {
             height = '400';
         }
-        console.log("WIDTH, HEIGHT", width, height);
         this.width = ~~width;
         this.height = ~~height;
         if (this.cd) {
