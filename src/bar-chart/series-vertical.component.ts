@@ -50,6 +50,7 @@ export enum D0Types {
         [value]="b.total"
         [valueFormatting]="dataLabelFormatting"
         [orientation]="'vertical'"
+        [rotateTicks]="rotateTicks"
         (dimensionsChanged)="dataLabelHeightChanged.emit({ size: $event, index: i })"
       />
     </svg:g>
@@ -82,6 +83,7 @@ export class SeriesVerticalComponent implements OnChanges {
   @Input() animations: boolean = true;
   @Input() showDataLabel: boolean = false;
   @Input() dataLabelFormatting: any;
+  @Input() rotateTicks: boolean = true;
 
   @Output() select = new EventEmitter();
   @Output() activate = new EventEmitter();

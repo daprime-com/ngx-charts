@@ -6,6 +6,7 @@ export declare class BarLabelComponent implements OnChanges {
     barY: any;
     barWidth: any;
     barHeight: any;
+    rotateTicks: boolean;
     orientation: any;
     dimensionsChanged: EventEmitter<any>;
     element: any;

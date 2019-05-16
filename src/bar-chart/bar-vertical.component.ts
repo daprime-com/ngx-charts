@@ -65,7 +65,8 @@ import { BaseChartComponent } from '../common/base-chart.component';
           [tooltipTemplate]="tooltipTemplate"
           [showDataLabel]="showDataLabel"
           [dataLabelFormatting]="dataLabelFormatting"
-          [activeEntries]="activeEntries"
+          [activeEntries]="activeEntries" 
+          [rotateTicks]="rotateXAxisTicks"
           [roundEdges]="roundEdges"
           [animations]="animations"
           (activate)="onActivate($event)"
@@ -134,11 +135,11 @@ export class BarVerticalComponent extends BaseChartComponent {
 
   update(): void {
     super.update();
-   
+
     if (!this.showDataLabel) {
-      this.dataLabelMaxHeight = {negative: 0, positive: 0};          
+      this.dataLabelMaxHeight = {negative: 0, positive: 0};
     }
-    this.margin = [10 + this.dataLabelMaxHeight.positive, 20, 10 + this.dataLabelMaxHeight.negative, 20]; 
+    this.margin = [10 + this.dataLabelMaxHeight.positive, 20, 10 + this.dataLabelMaxHeight.negative, 20];
 
     this.dims = calculateViewDimensions({
       width: this.width,
@@ -156,7 +157,7 @@ export class BarVerticalComponent extends BaseChartComponent {
     });
 
     if (this.showDataLabel) {
-      this.dims.height -= this.dataLabelMaxHeight.negative;    
+      this.dims.height -= this.dataLabelMaxHeight.negative;
     }
     this.xScale = this.getXScale();
     this.yScale = this.getYScale();
@@ -245,16 +246,16 @@ export class BarVerticalComponent extends BaseChartComponent {
     this.xAxisHeight = height;
     this.update();
   }
-  
-  onDataLabelMaxHeightChanged(event) {      
+
+  onDataLabelMaxHeightChanged(event) {
     if (event.size.negative)  {
       this.dataLabelMaxHeight.negative = Math.max(this.dataLabelMaxHeight.negative, event.size.height);
     } else {
       this.dataLabelMaxHeight.positive = Math.max(this.dataLabelMaxHeight.positive, event.size.height);
-    }      
+    }
     if (event.index === (this.results.length - 1)) {
       setTimeout(() => this.update());
-    }      
+    }
   }
 
   onActivate(item) {
