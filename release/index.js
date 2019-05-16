@@ -3725,7 +3725,7 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -3775,7 +3775,7 @@ var BarLabelComponent = /** @class */ (function () {
         }
         if (this.orientation === 'horizontal') {
             this.x = this.barX + this.barWidth;
-            // if the value is negative then it's on the left of the x0.
+            // if the value is negative then it's on the left of the x0. 
             // we need to put the data label in front of the bar
             if (this.value < 0) {
                 this.x = this.x - this.horizontalPadding;
@@ -3788,7 +3788,7 @@ var BarLabelComponent = /** @class */ (function () {
             this.y = this.barY + this.barHeight / 2;
         }
         else {
-            // orientation must be "vertical"
+            // orientation must be "vertical"      
             this.x = this.barX + this.barWidth / 2;
             this.y = this.barY + this.barHeight;
             if (this.value < 0) {
@@ -8115,7 +8115,7 @@ var YAxisComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -9750,7 +9750,7 @@ function formatLabel(label) {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -10007,7 +10007,7 @@ var LegendEntryComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -10153,7 +10153,7 @@ var LegendComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -10491,7 +10491,7 @@ function tickFormat(fieldType, groupByType) {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -11577,7 +11577,7 @@ var StyleTypes;
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -12261,7 +12261,7 @@ function createMouseEvent(name, bubbles, cancelable) {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -12824,7 +12824,7 @@ var GaugeAxisComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -13271,7 +13271,7 @@ var GaugeModule = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -14149,6 +14149,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "XAxisTicksComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["C"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "YAxisComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["D"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "YAxisTicksComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["E"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "reduceTicks", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["N"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ColorHelper", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["k"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ChartComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["h"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AreaComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["c"]; });
@@ -14179,7 +14180,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "StyleTypes", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["s"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AlignmentTypes", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ShowTypes", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["r"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "reduceTicks", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["N"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "CountUpDirective", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["l"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "count", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["G"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "decimalChecker", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["H"]; });
@@ -15377,7 +15377,7 @@ var CardSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -15798,7 +15798,7 @@ var NumberCardModule = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -16215,7 +16215,7 @@ var PieArcComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -16275,24 +16275,27 @@ var PieChartComponent = /** @class */ (function (_super) {
         _this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         _this.activate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         _this.deactivate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        _this.margin = [20, 20, 20, 20];
         return _this;
     }
     PieChartComponent.prototype.update = function () {
         var _this = this;
         _super.prototype.update.call(this);
-        if (this.labels && this.labelsPositionOutside) {
-            this.margin = [30, 80, 30, 80];
+        if ((this.labels && this.hasNoOptionalMarginsSet()) || (this.labels && this.labelsPositionOutside)) {
+            this.margins = [30, 80, 30, 80];
+        }
+        else if (!this.labels && this.hasNoOptionalMarginsSet()) {
+            // default value for margins
+            this.margins = [20, 20, 20, 20];
         }
         this.dims = Object(__WEBPACK_IMPORTED_MODULE_1__common_view_dimensions_helper__["a" /* calculateViewDimensions */])({
             width: this.width,
             height: this.height,
-            margins: this.margin,
+            margins: this.margins,
             showLegend: this.legend,
             legendPosition: this.legendPosition
         });
-        var xOffset = this.margin[3] + this.dims.width / 2;
-        var yOffset = this.margin[0] + this.dims.height / 2;
+        var xOffset = this.margins[3] + this.dims.width / 2;
+        var yOffset = this.margins[0] + this.dims.height / 2;
         this.translation = "translate(" + xOffset + ", " + yOffset + ")";
         this.outerRadius = Math.min(this.dims.width, this.dims.height);
         if (this.labels && this.labelsPositionOutside) {
@@ -16363,6 +16366,9 @@ var PieChartComponent = /** @class */ (function (_super) {
         this.activeEntries = this.activeEntries.slice();
         this.deactivate.emit({ value: item, entries: this.activeEntries });
     };
+    PieChartComponent.prototype.hasNoOptionalMarginsSet = function () {
+        return !this.margins || this.margins.length <= 0;
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -16427,6 +16433,10 @@ var PieChartComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
         __metadata("design:type", Object)
     ], PieChartComponent.prototype, "dblclick", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Array)
+    ], PieChartComponent.prototype, "margins", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
         __metadata("design:type", Object)
@@ -16646,7 +16656,7 @@ var PieGridSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -17240,7 +17250,7 @@ var PieSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 
@@ -18334,7 +18344,7 @@ var TreeMapCellComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-
+    
 
 /***/ }),
 

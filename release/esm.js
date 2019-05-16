@@ -12532,24 +12532,26 @@ var PieChartComponent = /** @class */ (function (_super) {
         _this.select = new EventEmitter();
         _this.activate = new EventEmitter();
         _this.deactivate = new EventEmitter();
-        _this.margin = [20, 20, 20, 20];
         return _this;
     }
     PieChartComponent.prototype.update = function () {
         var _this = this;
         _super.prototype.update.call(this);
-        if (this.labels && this.labelsPositionOutside) {
-            this.margin = [30, 80, 30, 80];
+        if ((this.labels && this.hasNoOptionalMarginsSet()) || (this.labels && this.labelsPositionOutside)) {
+            this.margins = [30, 80, 30, 80];
+        }
+        else if (!this.labels && this.hasNoOptionalMarginsSet()) {
+            this.margins = [20, 20, 20, 20];
         }
         this.dims = calculateViewDimensions({
             width: this.width,
             height: this.height,
-            margins: this.margin,
+            margins: this.margins,
             showLegend: this.legend,
             legendPosition: this.legendPosition
         });
-        var xOffset = this.margin[3] + this.dims.width / 2;
-        var yOffset = this.margin[0] + this.dims.height / 2;
+        var xOffset = this.margins[3] + this.dims.width / 2;
+        var yOffset = this.margins[0] + this.dims.height / 2;
         this.translation = "translate(" + xOffset + ", " + yOffset + ")";
         this.outerRadius = Math.min(this.dims.width, this.dims.height);
         if (this.labels && this.labelsPositionOutside) {
@@ -12618,6 +12620,9 @@ var PieChartComponent = /** @class */ (function (_super) {
         this.activeEntries = this.activeEntries.slice();
         this.deactivate.emit({ value: item, entries: this.activeEntries });
     };
+    PieChartComponent.prototype.hasNoOptionalMarginsSet = function () {
+        return !this.margins || this.margins.length <= 0;
+    };
     var _a, _b, _c;
     __decorate([
         Input(),
@@ -12683,6 +12688,10 @@ var PieChartComponent = /** @class */ (function (_super) {
         Output(),
         __metadata("design:type", Object)
     ], PieChartComponent.prototype, "dblclick", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Array)
+    ], PieChartComponent.prototype, "margins", void 0);
     __decorate([
         Output(),
         __metadata("design:type", Object)

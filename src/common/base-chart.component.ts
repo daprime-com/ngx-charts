@@ -61,8 +61,8 @@ export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
       this.results =  [];
     }
 
-    let width: string;
-    let height: string;
+    let width: any;
+    let height: any;
 
     if (this.view) {
       width = this.view[0];
