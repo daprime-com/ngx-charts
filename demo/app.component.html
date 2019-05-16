@@ -272,6 +272,7 @@
         [legendPosition]="legendPosition"
         [explodeSlices]="explodeSlices"
         [labels]="showLabels"
+					[labelsPositionOutside]="labelsPositionOutside"
         [doughnut]="doughnut"
         [arcWidth]="arcWidth"
         (legendLabelClick)="onLegendLabelClick($event)"
@@ -963,7 +964,7 @@
       [maxYAxisTickLength]="maxYAxisTickLength"
       (select)="select($event)">
     </ngx-charts-bar-horizontal-stacked>
-  </div>
+ </div>
   <div class="sidebar">
     <h1>
       Ngx-<strong>Charts</strong>
@@ -1030,14 +1031,14 @@
         </h3>
         <div [hidden]="!dimVisiable" style="margin-left: 10px;">
           <label>
-            <input type="checkbox" [checked]="fitContainer" (change)="toggleFitContainer($event.target.checked)">
+          <input type="checkbox" [checked]="fitContainer" (change)="toggleFitContainer($event.target.checked)">
             Fit Container
           </label> <br/>
           <div *ngIf="!fitContainer">
             <label>Width:</label><br/>
-            <input type="number" [(ngModel)]="width"><br/>
+            <input [(ngModel)]="width"><br/>
             <label>Height:</label><br/>
-            <input type="number" [(ngModel)]="height"><br/><br/>
+            <input [(ngModel)]="height"><br/><br/>
             <button class="btn btn-primary" (click)="applyDimensions()">Apply dimensions</button>
           </div>
         </div>
@@ -1096,7 +1097,7 @@
         </div>
         <div *ngIf="chart.options.includes('showRefLabels')">
           <label>
-            <input type="checkbox" [checked]="showRefLabels" (change)="showRefLabels = $event.target.checked">
+          <input type="checkbox" [checked]="showRefLabels" (change)="showRefLabels = $event.target.checked">
             Show Reference Labels
           </label> <br/>
         </div>
@@ -1114,7 +1115,7 @@
         </div>
         <div *ngIf="chart.options.includes('showGridLines')">
           <label>
-            <input type="checkbox" [checked]="showGridLines" (change)="showGridLines = $event.target.checked">
+          <input type="checkbox" [checked]="showGridLines" (change)="showGridLines = $event.target.checked">
             Show Grid Lines
           </label> <br/>
         </div>
@@ -1144,7 +1145,7 @@
         </div>
         <div *ngIf="chart.options.includes('showDataLabel')">
           <label>
-            <input type="checkbox" [checked]="showDataLabel" (change)="showDataLabel = $event.target.checked">
+          <input type="checkbox" [checked]="showDataLabel" (change)="showDataLabel = $event.target.checked">
             Show Data Label
           </label> <br/>
         </div>
@@ -1163,17 +1164,18 @@
           <select style="margin-left: 10px;" [(ngModel)]="legendPosition">
             <option value="right">Right</option>
             <option value="below">Below</option>
+			<option value="above">Above</option>
           </select><br/>
         </div>
         <div *ngIf="chart.options.includes('tooltipDisabled')">
           <label>
-            <input type="checkbox" [checked]="tooltipDisabled" (change)="tooltipDisabled = $event.target.checked">
+          <input type="checkbox" [checked]="tooltipDisabled" (change)="tooltipDisabled = $event.target.checked">
             Disable tooltip
           </label> <br/>
         </div>
         <div *ngIf="chart.options.includes('showXAxisLabel')">
           <label>
-            <input type="checkbox" [checked]="showXAxisLabel" (change)="showXAxisLabel = $event.target.checked">
+          <input type="checkbox" [checked]="showXAxisLabel" (change)="showXAxisLabel = $event.target.checked">
             Show X Axis Label
           </label> <br/>
         </div>
@@ -1183,7 +1185,7 @@
         </div>
         <div *ngIf="chart.options.includes('showYAxisLabel')">
           <label>
-            <input type="checkbox" [checked]="showYAxisLabel" (change)="showYAxisLabel = $event.target.checked">
+          <input type="checkbox" [checked]="showYAxisLabel" (change)="showYAxisLabel = $event.target.checked">
             Show Y Axis Label
           </label> <br/>
         </div>
@@ -1197,6 +1199,12 @@
             Show Labels
           </label> <br/>
         </div>
+		  <div *ngIf="showLabels && chart.options.includes('labelsPositionOutside')">
+			  <label>
+				  <input type="checkbox" [checked]="labelsPositionOutside" (change)="labelsPositionOutside = $event.target.checked">
+				  Labels outside of chart
+			  </label> <br />
+		  </div>
         <div *ngIf="chart.options.includes('trimXAxisTicks')">
           <label>
             <input type="checkbox" [checked]="trimXAxisTicks" (change)="trimXAxisTicks = $event.target.checked">
@@ -1216,7 +1224,7 @@
         <div *ngIf="chart.options.includes('maxYAxisTickLength')">
           <label>Max Y Axis Tick Length:</label><br />
           <input type="text" [(ngModel)]="maxYAxisTickLength"><br />
-        </div>
+				</div>
         <div *ngIf="chart.options.includes('doughnut')">
           <label>
             <input type="checkbox" [checked]="doughnut" (change)="doughnut = $event.target.checked">
@@ -1230,7 +1238,7 @@
         </div>
         <div *ngIf="chart.options.includes('explodeSlices') && !doughnut">
           <label>
-            <input type="checkbox" [checked]="explodeSlices" (change)="explodeSlices = $event.target.checked">
+          <input type="checkbox" [checked]="explodeSlices" (change)="explodeSlices = $event.target.checked">
             Explode Slices
           </label> <br/>
         </div>
@@ -1304,7 +1312,7 @@
         </div>
         <div *ngIf="chart.options.includes('showAxis')">
           <label>
-            <input type="checkbox" [checked]="gaugeShowAxis" (change)="gaugeShowAxis = $event.target.checked">
+          <input type="checkbox" [checked]="gaugeShowAxis" (change)="gaugeShowAxis = $event.target.checked">
             Show Axis
           </label> <br/>
         </div>

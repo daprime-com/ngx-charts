@@ -19,6 +19,20 @@ import { TooltipService } from '../tooltip';
       [style.width.px]="view[0]"
       [@animationState]="'active'"
       [@.disabled]="!animations">
+      <ngx-charts-legend
+              *ngIf="showLegend && legendType === 'legend' && legendOptions?.position === 'above'"
+              class="chart-legend"
+              [horizontal]="isLabelHorizontal(legendOptions)"
+              [data]="legendOptions.domain"
+              [title]="legendOptions.title"
+              [colors]="legendOptions.colors"
+              [height]="view[1]"
+              [width]="legendWidth"
+              [activeEntries]="activeEntries"
+              (labelClick)="legendLabelClick.emit($event)"
+              (labelActivate)="legendLabelActivate.emit($event)"
+              (labelDeactivate)="legendLabelDeactivate.emit($event)">
+      </ngx-charts-legend>
       <svg
         class="ngx-charts"
         [attr.width]="chartWidth"
@@ -28,16 +42,16 @@ import { TooltipService } from '../tooltip';
       <ngx-charts-scale-legend
         *ngIf="showLegend && legendType === 'scaleLegend'"
         class="chart-legend"
-        [horizontal]="legendOptions && legendOptions.position === 'below'"
+        [horizontal]="isLabelHorizontal(legendOptions)"
         [valueRange]="legendOptions.domain"
         [colors]="legendOptions.colors"
         [height]="view[1]"
         [width]="legendWidth">
       </ngx-charts-scale-legend>
       <ngx-charts-legend
-        *ngIf="showLegend && legendType === 'legend'"
+        *ngIf="showLegend && legendType === 'legend' && legendOptions?.position !== 'above'"
         class="chart-legend"
-        [horizontal]="legendOptions && legendOptions.position === 'below'"
+        [horizontal]="isLabelHorizontal(legendOptions)"
         [data]="legendOptions.domain"
         [title]="legendOptions.title"
         [colors]="legendOptions.colors"
@@ -86,6 +100,14 @@ export class ChartComponent implements OnChanges {
     private vcr: ViewContainerRef,
     private tooltipService: TooltipService) {
     this.tooltipService.injectionService.setRootViewContainer(this.vcr);
+  }
+
+  isLabelHorizontal(legendOptions: any) {
+    if (!legendOptions) {
+      return false;
+    }
+
+    return ~[ 'below', 'above' ].indexOf(legendOptions.position);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

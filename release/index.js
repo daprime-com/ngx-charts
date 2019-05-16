@@ -3725,7 +3725,7 @@ var BarHorizontalComponent = /** @class */ (function (_super) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -3775,7 +3775,7 @@ var BarLabelComponent = /** @class */ (function () {
         }
         if (this.orientation === 'horizontal') {
             this.x = this.barX + this.barWidth;
-            // if the value is negative then it's on the left of the x0. 
+            // if the value is negative then it's on the left of the x0.
             // we need to put the data label in front of the bar
             if (this.value < 0) {
                 this.x = this.x - this.horizontalPadding;
@@ -3788,7 +3788,7 @@ var BarLabelComponent = /** @class */ (function () {
             this.y = this.barY + this.barHeight / 2;
         }
         else {
-            // orientation must be "vertical"      
+            // orientation must be "vertical"
             this.x = this.barX + this.barWidth / 2;
             this.y = this.barY + this.barHeight;
             if (this.value < 0) {
@@ -8115,7 +8115,7 @@ var YAxisComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -8177,26 +8177,32 @@ var BaseChartComponent = /** @class */ (function () {
         else {
             this.results = [];
         }
+        var width;
+        var height;
         if (this.view) {
-            this.width = this.view[0];
-            this.height = this.view[1];
+            width = this.view[0];
+            height = this.view[1];
         }
-        else {
+        if (!this.view || width === 'auto' || height === 'auto') {
             var dims = this.getContainerDims();
             if (dims) {
-                this.width = dims.width;
-                this.height = dims.height;
+                if (!width || width === 'auto') {
+                    width = dims.width;
+                }
+                if (!height || height === 'auto') {
+                    height = dims.height;
+                }
             }
         }
         // default values if width or height are 0 or undefined
-        if (!this.width) {
-            this.width = 600;
+        if (!width) {
+            width = '600';
         }
-        if (!this.height) {
-            this.height = 400;
+        if (!height) {
+            height = '400';
         }
-        this.width = Math.floor(this.width);
-        this.height = Math.floor(this.height);
+        this.width = Math.floor(width);
+        this.height = Math.floor(height);
         if (this.cd) {
             this.cd.markForCheck();
         }
@@ -8453,6 +8459,12 @@ var ChartComponent = /** @class */ (function () {
         this.legendLabelDeactivate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.tooltipService.injectionService.setRootViewContainer(this.vcr);
     }
+    ChartComponent.prototype.isLabelHorizontal = function (legendOptions) {
+        if (!legendOptions) {
+            return false;
+        }
+        return ~['below', 'above'].indexOf(legendOptions.position);
+    };
     ChartComponent.prototype.ngOnChanges = function (changes) {
         this.update();
     };
@@ -8535,7 +8547,7 @@ var ChartComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip__["g" /* TooltipService */]],
             selector: 'ngx-charts-chart',
-            template: "\n    <div\n      class=\"ngx-charts-outer\"\n      [style.width.px]=\"view[0]\"\n      [@animationState]=\"'active'\"\n      [@.disabled]=\"!animations\">\n      <svg\n        class=\"ngx-charts\"\n        [attr.width]=\"chartWidth\"\n        [attr.height]=\"view[1]\">\n        <ng-content></ng-content>\n      </svg>\n      <ngx-charts-scale-legend\n        *ngIf=\"showLegend && legendType === 'scaleLegend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"legendOptions && legendOptions.position === 'below'\"\n        [valueRange]=\"legendOptions.domain\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\">\n      </ngx-charts-scale-legend>\n      <ngx-charts-legend\n        *ngIf=\"showLegend && legendType === 'legend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"legendOptions && legendOptions.position === 'below'\"\n        [data]=\"legendOptions.domain\"\n        [title]=\"legendOptions.title\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\"\n        [activeEntries]=\"activeEntries\"\n        (labelClick)=\"legendLabelClick.emit($event)\"\n        (labelActivate)=\"legendLabelActivate.emit($event)\"\n        (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n    </div>\n  ",
+            template: "\n    <div\n      class=\"ngx-charts-outer\"\n      [style.width.px]=\"view[0]\"\n      [@animationState]=\"'active'\"\n      [@.disabled]=\"!animations\">\n      <ngx-charts-legend\n              *ngIf=\"showLegend && legendType === 'legend' && legendOptions?.position === 'above'\"\n              class=\"chart-legend\"\n              [horizontal]=\"isLabelHorizontal(legendOptions)\"\n              [data]=\"legendOptions.domain\"\n              [title]=\"legendOptions.title\"\n              [colors]=\"legendOptions.colors\"\n              [height]=\"view[1]\"\n              [width]=\"legendWidth\"\n              [activeEntries]=\"activeEntries\"\n              (labelClick)=\"legendLabelClick.emit($event)\"\n              (labelActivate)=\"legendLabelActivate.emit($event)\"\n              (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n      <svg\n        class=\"ngx-charts\"\n        [attr.width]=\"chartWidth\"\n        [attr.height]=\"view[1]\">\n        <ng-content></ng-content>\n      </svg>\n      <ngx-charts-scale-legend\n        *ngIf=\"showLegend && legendType === 'scaleLegend'\"\n        class=\"chart-legend\"\n        [horizontal]=\"isLabelHorizontal(legendOptions)\"\n        [valueRange]=\"legendOptions.domain\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\">\n      </ngx-charts-scale-legend>\n      <ngx-charts-legend\n        *ngIf=\"showLegend && legendType === 'legend' && legendOptions?.position !== 'above'\"\n        class=\"chart-legend\"\n        [horizontal]=\"isLabelHorizontal(legendOptions)\"\n        [data]=\"legendOptions.domain\"\n        [title]=\"legendOptions.title\"\n        [colors]=\"legendOptions.colors\"\n        [height]=\"view[1]\"\n        [width]=\"legendWidth\"\n        [activeEntries]=\"activeEntries\"\n        (labelClick)=\"legendLabelClick.emit($event)\"\n        (labelActivate)=\"legendLabelActivate.emit($event)\"\n        (labelDeactivate)=\"legendLabelDeactivate.emit($event)\">\n      </ngx-charts-legend>\n    </div>\n  ",
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
             animations: [
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["trigger"])('animationState', [
@@ -9738,7 +9750,7 @@ function formatLabel(label) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -9995,7 +10007,7 @@ var LegendEntryComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -10141,7 +10153,7 @@ var LegendComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -10479,7 +10491,7 @@ function tickFormat(fieldType, groupByType) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -11565,7 +11577,7 @@ var StyleTypes;
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -12249,7 +12261,7 @@ function createMouseEvent(name, bubbles, cancelable) {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -12812,7 +12824,7 @@ var GaugeAxisComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -13259,7 +13271,7 @@ var GaugeModule = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -14137,7 +14149,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "XAxisTicksComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["C"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "YAxisComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["D"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "YAxisTicksComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["E"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "reduceTicks", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["N"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ColorHelper", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["k"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ChartComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["h"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AreaComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["c"]; });
@@ -14168,6 +14179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "StyleTypes", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["s"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AlignmentTypes", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ShowTypes", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["r"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "reduceTicks", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["N"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "CountUpDirective", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["l"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "count", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["G"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "decimalChecker", function() { return __WEBPACK_IMPORTED_MODULE_1__common__["H"]; });
@@ -15365,7 +15377,7 @@ var CardSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -15786,7 +15798,7 @@ var NumberCardModule = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -16203,7 +16215,7 @@ var PieArcComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -16256,6 +16268,7 @@ var PieChartComponent = /** @class */ (function (_super) {
         _this.arcWidth = 0.25;
         _this.activeEntries = [];
         _this.tooltipDisabled = false;
+        _this.labelsPositionOutside = true;
         _this.trimLabels = true;
         _this.maxLabelLength = 10;
         _this.dblclick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -16268,7 +16281,7 @@ var PieChartComponent = /** @class */ (function (_super) {
     PieChartComponent.prototype.update = function () {
         var _this = this;
         _super.prototype.update.call(this);
-        if (this.labels) {
+        if (this.labels && this.labelsPositionOutside) {
             this.margin = [30, 80, 30, 80];
         }
         this.dims = Object(__WEBPACK_IMPORTED_MODULE_1__common_view_dimensions_helper__["a" /* calculateViewDimensions */])({
@@ -16282,7 +16295,7 @@ var PieChartComponent = /** @class */ (function (_super) {
         var yOffset = this.margin[0] + this.dims.height / 2;
         this.translation = "translate(" + xOffset + ", " + yOffset + ")";
         this.outerRadius = Math.min(this.dims.width, this.dims.height);
-        if (this.labels) {
+        if (this.labels && this.labelsPositionOutside) {
             // make room for labels
             this.outerRadius /= 3;
         }
@@ -16396,6 +16409,10 @@ var PieChartComponent = /** @class */ (function (_super) {
     ], PieChartComponent.prototype, "labelFormatting", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], PieChartComponent.prototype, "labelsPositionOutside", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
     ], PieChartComponent.prototype, "trimLabels", void 0);
     __decorate([
@@ -16429,7 +16446,7 @@ var PieChartComponent = /** @class */ (function (_super) {
     PieChartComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'ngx-charts-pie-chart',
-            template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [activeEntries]=\"activeEntries\"\n      [animations]=\"animations\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\"\n      (legendLabelClick)=\"onClick($event)\">\n      <svg:g [attr.transform]=\"translation\" class=\"pie-chart chart\">\n        <svg:g ngx-charts-pie-series\n          [colors]=\"colors\"\n          [series]=\"data\"\n          [showLabels]=\"labels\"\n          [labelFormatting]=\"labelFormatting\"\n          [trimLabels]=\"trimLabels\"\n          [maxLabelLength]=\"maxLabelLength\"\n          [activeEntries]=\"activeEntries\"\n          [innerRadius]=\"innerRadius\"\n          [outerRadius]=\"outerRadius\"\n          [explodeSlices]=\"explodeSlices\"\n          [gradient]=\"gradient\"\n          [animations]=\"animations\"\n          [tooltipDisabled]=\"tooltipDisabled\"\n          [tooltipTemplate]=\"tooltipTemplate\"\n          [tooltipText]=\"tooltipText\"\n          (dblclick)=\"dblclick.emit($event)\"\n          (select)=\"onClick($event)\"\n          (activate)=\"onActivate($event)\"\n          (deactivate)=\"onDeactivate($event)\"\n        />\n      </svg:g>\n    </ngx-charts-chart>\n  ",
+            template: "\n    <ngx-charts-chart\n      [view]=\"[width, height]\"\n      [showLegend]=\"legend\"\n      [legendOptions]=\"legendOptions\"\n      [activeEntries]=\"activeEntries\"\n      [animations]=\"animations\"\n      (legendLabelActivate)=\"onActivate($event)\"\n      (legendLabelDeactivate)=\"onDeactivate($event)\"\n      (legendLabelClick)=\"onClick($event)\">\n      <svg:g [attr.transform]=\"translation\" class=\"pie-chart chart\">\n        <svg:g ngx-charts-pie-series\n          [colors]=\"colors\"\n          [series]=\"data\"\n          [showLabels]=\"labels\"\n          [labelsPositionOutside]=\"labelsPositionOutside\"\n          [labelFormatting]=\"labelFormatting\"\n          [trimLabels]=\"trimLabels\"\n          [maxLabelLength]=\"maxLabelLength\"\n          [activeEntries]=\"activeEntries\"\n          [innerRadius]=\"innerRadius\"\n          [outerRadius]=\"outerRadius\"\n          [explodeSlices]=\"explodeSlices\"\n          [gradient]=\"gradient\"\n          [animations]=\"animations\"\n          [tooltipDisabled]=\"tooltipDisabled\"\n          [tooltipTemplate]=\"tooltipTemplate\"\n          [tooltipText]=\"tooltipText\"\n          (dblclick)=\"dblclick.emit($event)\"\n          (select)=\"onClick($event)\"\n          (activate)=\"onActivate($event)\"\n          (deactivate)=\"onDeactivate($event)\"\n        />\n      </svg:g>\n    </ngx-charts-chart>\n  ",
             styles: [
                 __webpack_require__("./src/common/base-chart.component.scss"),
                 __webpack_require__("./src/pie-chart/pie-chart.component.scss")
@@ -16629,7 +16646,7 @@ var PieGridSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -16897,6 +16914,9 @@ var PieLabelComponent = /** @class */ (function () {
         configurable: true
     });
     PieLabelComponent.prototype.textAnchor = function () {
+        if (!this.labelsPositionOutside) {
+            return 'middle';
+        }
         return this.midAngle(this.data) < Math.PI ? 'start' : 'end';
     };
     PieLabelComponent.prototype.midAngle = function (d) {
@@ -16914,6 +16934,10 @@ var PieLabelComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], PieLabelComponent.prototype, "label", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], PieLabelComponent.prototype, "labelsPositionOutside", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
@@ -16945,7 +16969,7 @@ var PieLabelComponent = /** @class */ (function () {
     PieLabelComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'g[ngx-charts-pie-label]',
-            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{labelTrim ? trimLabel(label, labelTrimSize) : label}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
+            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{labelTrim ? trimLabel(label, labelTrimSize) : label}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      *ngIf=\"labelsPositionOutside\"\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
         }),
         __metadata("design:paramtypes", [])
@@ -17014,7 +17038,7 @@ var PieSeriesComponent = /** @class */ (function () {
         return d.startAngle + (d.endAngle - d.startAngle) / 2;
     };
     PieSeriesComponent.prototype.outerArc = function () {
-        var factor = 1.5;
+        var factor = this.labelsPositionOutside ? 1.5 : 0.5;
         return Object(__WEBPACK_IMPORTED_MODULE_2_d3_shape__["arc"])()
             .innerRadius(this.outerRadius * factor)
             .outerRadius(this.outerRadius * factor);
@@ -17026,7 +17050,9 @@ var PieSeriesComponent = /** @class */ (function () {
         var labelPositions = pieData;
         labelPositions.forEach(function (d) {
             d.pos = _this.outerArc().centroid(d);
-            d.pos[0] = factor * _this.outerRadius * (_this.midAngle(d) < Math.PI ? 1 : -1);
+            if (_this.labelsPositionOutside) {
+                d.pos[0] = factor * _this.outerRadius * (_this.midAngle(d) < Math.PI ? 1 : -1);
+            }
         });
         for (var i = 0; i < labelPositions.length - 1; i++) {
             var a = labelPositions[i];
@@ -17118,6 +17144,10 @@ var PieSeriesComponent = /** @class */ (function () {
     ], PieSeriesComponent.prototype, "showLabels", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], PieSeriesComponent.prototype, "labelsPositionOutside", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
     ], PieSeriesComponent.prototype, "gradient", void 0);
     __decorate([
@@ -17171,7 +17201,7 @@ var PieSeriesComponent = /** @class */ (function () {
     PieSeriesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'g[ngx-charts-pie-series]',
-            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g ngx-charts-pie-label\n        *ngIf=\"labelVisible(arc)\"\n        [data]=\"arc\"\n        [radius]=\"outerRadius\"\n        [color]=\"color(arc)\"\n        [label]=\"labelText(arc)\"\n        [labelTrim]=\"trimLabels\"\n        [labelTrimSize]=\"maxLabelLength\"\n        [max]=\"max\"\n        [value]=\"arc.value\"\n        [explodeSlices]=\"explodeSlices\"\n        [animations]=\"animations\">\n      </svg:g>\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        (dblclick)=\"dblclick.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"getTooltipTitle(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n    </svg:g>\n  ",
+            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        (dblclick)=\"dblclick.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"getTooltipTitle(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n      <svg:g ngx-charts-pie-label\n             *ngIf=\"labelVisible(arc)\"\n             [data]=\"arc\"\n             [radius]=\"outerRadius\"\n             [color]=\"color(arc)\"\n             [label]=\"labelText(arc)\"\n             [labelsPositionOutside]=\"labelsPositionOutside\"\n             [labelTrim]=\"trimLabels\"\n             [labelTrimSize]=\"maxLabelLength\"\n             [max]=\"max\"\n             [value]=\"arc.value\"\n             [explodeSlices]=\"explodeSlices\"\n             [animations]=\"animations\">\n      </svg:g>\n    </svg:g>\n  ",
             changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
         })
     ], PieSeriesComponent);
@@ -17210,7 +17240,7 @@ var PieSeriesComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 
@@ -18304,7 +18334,7 @@ var TreeMapCellComponent = /** @class */ (function () {
         } else {
             module.exports = result.toString();
         }
-    
+
 
 /***/ }),
 

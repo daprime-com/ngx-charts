@@ -29,6 +29,7 @@ import { BaseChartComponent } from '../common/base-chart.component';
           [colors]="colors"
           [series]="data"
           [showLabels]="labels"
+          [labelsPositionOutside]="labelsPositionOutside"
           [labelFormatting]="labelFormatting"
           [trimLabels]="trimLabels"
           [maxLabelLength]="maxLabelLength"
@@ -69,6 +70,7 @@ export class PieChartComponent extends BaseChartComponent {
   @Input() activeEntries: any[] = [];
   @Input() tooltipDisabled: boolean = false;
   @Input() labelFormatting: any;
+  @Input() labelsPositionOutside = true;
   @Input() trimLabels: boolean = true;
   @Input() maxLabelLength: number = 10;
   @Input() tooltipText: any;
@@ -93,7 +95,7 @@ export class PieChartComponent extends BaseChartComponent {
   update(): void {
     super.update();
 
-    if (this.labels && this.hasNoOptionalMarginsSet()) {
+    if ((this.labels && this.hasNoOptionalMarginsSet()) || (this.labels && this.labelsPositionOutside)) {
       this.margins = [30, 80, 30, 80];
     } else if (!this.labels && this.hasNoOptionalMarginsSet()) {
       // default value for margins
@@ -112,7 +114,7 @@ export class PieChartComponent extends BaseChartComponent {
     const yOffset = this.margins[0] + this.dims.height / 2;
     this.translation = `translate(${xOffset}, ${yOffset})`;
     this.outerRadius = Math.min(this.dims.width, this.dims.height);
-    if (this.labels) {
+    if (this.labels && this.labelsPositionOutside) {
       // make room for labels
       this.outerRadius /= 3;
     } else {
